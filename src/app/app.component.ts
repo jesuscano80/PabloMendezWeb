@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Blog } from './models/blog';
+import { BlogconnectService } from './services/blogconnect.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pablo';
+  blogs:any;
+  constructor(public blogService:BlogconnectService) {
+    this.blogs=[];
+   }
+
+  ngOnInit(): void {
+
+    this.blogService.getBlogs().subscribe(
+      res=> this.blogs=res,
+      err=> console.log(err)
+    )
+  }
+
 }

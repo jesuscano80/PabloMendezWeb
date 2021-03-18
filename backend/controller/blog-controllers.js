@@ -1,4 +1,5 @@
 import {Request, Response} from "express";
+
 import Blog from "../models/blogs-model";
 
 export const getblogs= async (req=Request,res=Response)=>{
@@ -25,4 +26,10 @@ export const putBlog = async (req=Request, res=Response)=>{
 export const deleteBlog = async (req=Request, res=Response)=>{
     const deleted= await Blog.findByIdAndDelete(req.params.id);
     res.json(deleted);
+}
+
+export const uploadPhoto = async (req=Request, res=Response)=>{
+    
+
+
 }

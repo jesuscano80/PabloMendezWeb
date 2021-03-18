@@ -1,0 +1,8 @@
+.gridDiv{
+    display:grid;
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: #2196F3;
+    padding: 10px;
+}

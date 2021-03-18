@@ -1,1 +1,7 @@
-<button mat-button>Click me!</button>
+
+<h1>BLOGS</h1>
+<div class="gridDiv">
+    <div *ngFor= "let item of blogs">{{item.titulo}}</div>
+    <div *ngFor= "let item of blogs">{{item.categoria}}</div>
+    <div *ngFor= "let item of blogs">{{item.texto}}</div>
+</div>

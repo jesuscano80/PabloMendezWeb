@@ -131,6 +131,50 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "http://localhost:3000/blog/:id/image",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "image/jpeg",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"contentType": "",
+									"type": "file",
+									"src": "/C:/Users/jesus/Dropbox/ing.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/blog/6051d9cab048571d2c82bf98/image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blog",
+								"6051d9cab048571d2c82bf98",
+								"image"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

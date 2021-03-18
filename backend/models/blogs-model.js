@@ -8,8 +8,16 @@ const blogSchema= new Schema({
         type:String
     },
     texto:{
+        type:String,
+        required:true
+    },
+    nombreFoto:{
         type:String
-    }},
+    },
+    descripcionFoto:{
+        type:String
+    }
+    },
     {timestamps:true,
     versionKey:false}
 )

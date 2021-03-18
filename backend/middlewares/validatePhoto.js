@@ -1,26 +1,45 @@
 
-// import FileType from "file-type";
-const fileType= require("file-type");
+import path from "path";
+import multer from "multer";
 
-export const validatePhoto = async (req,res,next)=>{
-const allowPhotoTypes=["image/jpg", "image/png", "image/gif", "image/jpeg"];
-const mimetype= req.get("content-type")
-console.log(allowPhotoTypes.includes(mimetype));
-if(!allowPhotoTypes.includes(mimetype)) {
-    console.log(`tipo de foto no admitido ${mimetype}`);
-    res.status(400).send(`tipo de foto no admitido ${mimetype}. Solo válidos ${allowPhotoTypes.join(" ,")}`);
-    return
-}
-const fileInfo= await fileType.fromBuffer(req.body);
 
-if(!allowPhotoTypes.includes(fileInfo.mime)) {
-    console.log(`tipo de foto no admitido ${fileInfo.mime}`);
-    res.status(400).send(`tipo de foto no admitido ${fileInfo.mime}. Solo válidos ${allowPhotoTypes.join(" ,")}`);
-    return
-}
+const optionStorage= multer.diskStorage({
+    destination: path.join(__dirname, "../public/uploads"),
+    filename: (req, file, cb)=>{
+        cb(null, file.originalname);
+    }
+});
 
-req.extensionArchivo=fileInfo.ext;
-
-next();
-}
-
+export  function uploadFile(req, res, next) {
+        const Upload = multer({
+            storage: optionStorage,
+            limits: { fileSize: 4000000},
+            fileFilter: (req, file, cb) =>{
+                
+                const allowPhotoTypes=["image/jpg", "image/png", "image/gif", "image/jpeg"];
+                const extension=path.extname(file.originalname);
+                console.log(allowPhotoTypes.includes(file.mimetype));
+                if (allowPhotoTypes.includes(file.mimetype)){
+                    return cb(null,true)
+                }
+                cb("archivo debe ser una imagen valida");
+                
+            },
+            dest: path.join(__dirname, "../public/uploads")
+            }).single("image")
+    
+        Upload(req, res, function (err) {
+            if (err instanceof multer.MulterError) {
+                // A Multer error occurred when uploading
+                res.status(413).json("tamaño demasiado grande")
+                return
+            } 
+            else if (err) {
+                // fallo formato
+                res.status(415).json("el fichero no es del formato correcto");
+                return
+            }
+            
+            next()
+        })
+    }
