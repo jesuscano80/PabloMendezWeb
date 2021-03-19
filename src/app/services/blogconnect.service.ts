@@ -12,4 +12,8 @@ export class BlogconnectService {
    getBlogs(){
      return this.http.get(this.url);
    }
+
+   createBlog(post:any){
+     return this.http.post(this.url, post );
+   }
 }

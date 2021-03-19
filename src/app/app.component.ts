@@ -10,8 +10,10 @@ import { BlogconnectService } from './services/blogconnect.service';
 export class AppComponent {
   title = 'pablo';
   blogs:any;
+  blog:any;
   constructor(public blogService:BlogconnectService) {
     this.blogs=[];
+    this.blog= new Blog("","","","","");
    }
 
   ngOnInit(): void {
@@ -20,6 +22,22 @@ export class AppComponent {
       res=> this.blogs=res,
       err=> console.log(err)
     )
+  }
+
+  onSubmit(post:any){
+    
+    let blogGuardar=
+   {"titulo":post.value.titulo,
+  "categoria": post.value.categoria,
+  "descripcionFoto": post.value.descripcionFoto,
+  "nombreFoto": post.value.nombreFoto,
+  "texto": post.value.texto};
+
+
+    
+  this.blogService.createBlog(blogGuardar).subscribe((data:any)=>{
+      console.log(data)
+  })
   }
 
 }
