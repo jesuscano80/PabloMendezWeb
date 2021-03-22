@@ -10,7 +10,7 @@
 </form> -->
 
 
-<form #Form="ngForm"  (ngSubmit)="(Form.invalid) ? 'mal' : onSubmit(Form)">
+<form #Form="ngForm"  (ngSubmit)="(Form.invalid) ? 'no enviar' : onSubmit(Form)">
         
     <div>
         Título
@@ -41,7 +41,8 @@
         <input type="file" autocomplete="off"
             placeholder="Introduce foto"           
             name="nombreFoto" [(ngModel)]="blog.nombreFoto" #nombreFoto="ngModel" 
-            [ngClass]="{'invalidForm':Form.submitted && nombreFoto.invalid }" required>
+            [ngClass]="{'invalidForm':Form.submitted && nombreFoto.invalid }" 
+            (change)="handleFileInput($event)" required>
     </div>
 
     <div>
@@ -60,9 +61,17 @@
 
 <h1>BLOGS</h1>
 <div class="gridDiv">
-    <div *ngFor= "let item of blogs">{{item.titulo}}</div>
-    <div *ngFor= "let item of blogs">{{item.categoria}}</div>
-    <div *ngFor= "let item of blogs">{{item.texto}}
-        <label [innerHTML]="item.texto"> {{item.texto}}</label> </div>
+    <ng-container *ngFor="let item of blogs">
+        <div class="blog">
+            <h1> {{item.titulo}} <button (click)="editBlog(item._id)">Modificar</button>
+        <button (click)="deleteBlog(item._id)">Borrar</button> </h1>
+        <div>{{item.categoria}}</div>        
+            <label [innerHTML]="item.texto"> {{item.texto}}</label>
+            <div></div>
+        <img class="imageMini" src="http://localhost:3000/uploads/{{item.nombreFoto}}">
+    </div>
+    </ng-container>   
 
 </div>
+
+<p (click)="ngOnInit()">Más entradas del blog</p>
