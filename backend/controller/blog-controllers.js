@@ -3,7 +3,6 @@ import {Request, Response} from "express";
 import Blog from "../models/blogs-model";
 
 export const getblogs= async (req=Request,res=Response)=>{
-
 const allblogs= await Blog.find({})
 res.send(allblogs);
 }

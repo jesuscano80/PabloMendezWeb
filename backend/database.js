@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
-import { textChangeRangeIsUnchanged } from "typescript";
-const databasedir= "mongodb://localhost/pabloblog";
-mongoose.connect(databasedir, 
+require("dotenv").config();
+// const databasedir= "mongodb://localhost/pabloblog";
+
+mongoose.connect(process.env.DBASE, 
     { useNewUrlParser: true  ,
         useUnifiedTopology: true,
         useFindAndModify:true,
