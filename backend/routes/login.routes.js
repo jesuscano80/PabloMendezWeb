@@ -1,20 +1,11 @@
 import {Router } from "express";
 const router = Router();
-require("dotenv").config();
-import jwt from "jsonwebtoken";
+import * as LoginCtrl from "../controller/login-controller"
 
 
-router.post("/login", async (req, res)=>{
-    const {username, password} =req.body;
-    
-    if (username!= process.env.USER || password != process.env.PASSWORD){
-            return res.status(401).json({auth:null})
-    }
-   
-    const token=await jwt.sign(password, process.env.SECRET);
-    req.headers.authorization=token;
-    res.json({auth:true , token });
-    
-})
+
+router.post("/login", LoginCtrl.login)
+
+router.post("/refresh", LoginCtrl.refresh)
 
 export default router;

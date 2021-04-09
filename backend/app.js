@@ -15,7 +15,6 @@ const app=express();
 app.use(morgan("dev"));
 app.use(cors(corsOptions));
 app.use(express.json());
-// app.use(express.raw({type: "image/*",limit: "2mb"}));
 app.use(express.urlencoded({extended:false}));
 app.use(compression());
 app.use(express.static(path.join(__dirname, "public")));
