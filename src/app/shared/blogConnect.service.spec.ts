@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BlogconnectService } from './blogconnect.service';
+import { BlogConnectService } from './blogConnect.service';
 
 describe('BlogconnectService', () => {
-  let service: BlogconnectService;
+  let service: BlogConnectService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(BlogconnectService);
+    service = TestBed.inject(BlogConnectService);
   });
 
   it('should be created', () => {
