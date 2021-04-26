@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
     "username":"PedroMendez",
-"password":"123456"
+    "password":"123456"
 }
 
 ###
@@ -20,4 +20,4 @@ Authorization: Bearer aeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiUGVkcm9N
 ###
 POST http://localhost:3000/refresh
 Content-Type: application/json
-refresh: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiUGVkcm9NZW5kZXoiLCJpYXQiOjE2MTc5NTYxODksImV4cCI6MTYxNzk1ODU4OX0.TG2ndAlCLCL-PwfLlLnWq2_J69WaFqFA3ckSDETdTn0
+refresh: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiUGVkcm9NZW5kZXoiLCJpYXQiOjE2MTc5NjQ5ODMsImV4cCI6MTYxNzk2NzM4M30.5Vo3qy-KcUURlblZq62aaW_l_khPpFldlHYKrul186k
