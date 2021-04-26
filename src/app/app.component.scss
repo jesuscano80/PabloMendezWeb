@@ -1,0 +1,12 @@
+@import "/src/variables.scss";
+
+main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: $white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px calc(100vh - 100px);
+    grid-template-areas: "header" "body";
+}
