@@ -23,6 +23,7 @@ export const refresh = async (req, res)=>{
     let user;
     try {
         const verifyjwt= await jwt.verify(refreshToken,process.env.REFRESH)
+        console.log(verifyjwt);
         user =verifyjwt.user;
     } catch (err) {
         return res.status(400).json({message:err})
