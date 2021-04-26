@@ -1,0 +1,141 @@
+@import "/src/variables.scss";
+
+header {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    & > .spaceLeft {
+        min-width: 153px;
+        height: 100%;
+        background-color: $black;
+        & > .index {
+            position: relative;
+            top: 44.8px;
+            left: 66px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70.4px;
+            height: 70.4px;
+            background: $black;
+            border: 5.3px solid $white;
+            box-shadow: 0 0 0 1px $black;
+            transform: rotate(-45deg);
+            & >img {
+                transform: rotate(45deg);
+                width: 32px;
+                height: 100%;
+                filter: invert(1);   
+    }}}
+    & > .nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: $black;
+        & > .left, & > .right {     // Estos atributos se aplican a todos los elementos del navbar
+            display: flex;
+            & > .element {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $white;
+                font-size: $font-size-normal;
+                text-decoration: none;
+                padding: 0 50px 0 50px;
+                min-height: 80px;
+                cursor: default;
+                transition: color 0.3s ease-in 0s;
+                &:hover {
+                    color: $grey;
+                    transition: color 0.3s ease-in 0s;
+            }}
+            & > .select {
+                position: fixed;
+                display: block;
+                min-width: 19px;
+                min-height: 19px;
+                max-width: 19px;
+                max-height: 19px;
+                background-color: $white;
+                border: 2px solid $white;
+                box-shadow: 0 0 0 1px $black;
+                transform: rotate(45deg);
+                top: 70px;
+                cursor: default;
+                transition: background-color 0.3s ease-in 0s;
+                &:hover {
+                    background-color: $red;
+                    transition: background-color 0.3s ease-in 0s;
+        }}}
+        & > .left {     // Left elements
+            & > .element {
+                &:hover {
+            }}
+            & > .select {
+            }
+            & > .s1 {
+                left:227px;
+            }
+            & > .s2 {
+                left:427px;
+        }}
+        & > .right {     // Right elements
+            & > .element {
+                &:hover {
+            }}
+            & > .select {
+                }
+                & > .s3 {
+                    right: 117px;
+}}}}
+@media screen and (max-width: 810px) {
+    header {
+        & > .spaceLeft {
+            max-height: 60px;
+            min-width: 85px;
+            & > .index {
+                width: 40px;
+                height: 40px;
+                border: 3px solid $white;
+                left: 36px;
+                top: 40px;
+                & >img {
+                width: 17px;
+        }}}
+        & > .nav {
+            height: 60px;
+            & > .left, & > .right {
+                & > .element {
+                    font-size: $font-size-smaller;
+                    padding: 0 20px 0 20px;
+                    min-height: 60px;
+                    &:hover {
+                }}
+                & > .select {
+                    min-width: 12px;
+                    min-height: 12px;
+                    max-width: 12px;
+                    max-height: 12px;
+                    top: 54px;
+            }}
+            & > .left {
+                & > .element {
+                &:hover {
+                }}
+                & > .select {
+                }
+                & > .s1 {
+                    left: 124px;
+                }
+                & > .s2 {
+                    left: 240px;
+            }}
+            & > .right {
+                & > .element {
+                    &:hover {
+                }}
+                & > .select {
+                }
+                & > .s3 {
+                    right: 70px;
+}}}}}
