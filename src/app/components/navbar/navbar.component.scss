@@ -1,5 +1,5 @@
-@import "/src/variables.scss";
-
+//-----Global desing component-----
+//----------//----------//----------//----------//----------
 header {
     width: 100%;
     height: 80%;
@@ -7,7 +7,7 @@ header {
     & > .spaceLeft {
         min-width: 153px;
         height: 100%;
-        background-color: $black;
+        background-color: var(--black);
         & > .index {
             position: relative;
             top: 44.8px;
@@ -17,38 +17,37 @@ header {
             justify-content: center;
             width: 70.4px;
             height: 70.4px;
-            background: $black;
-            border: 5.3px solid $white;
-            box-shadow: 0 0 0 1px $black;
+            background: var(--black);
+            border: 5.3px solid var(--white);
+            box-shadow: 0 0 0 1px var(--black);
             transform: rotate(-45deg);
+            transition: border-color 0.3s ease-in 0s;
             & >img {
                 transform: rotate(45deg);
                 width: 32px;
                 height: 100%;
-                filter: invert(1);   
+                filter: brightness(0) invert(1);
+                transition: filter 0.3s ease-in 0s !important;
     }}}
     & > .nav {
         display: flex;
         justify-content: space-between;
         width: 100%;
-        background-color: $black;
+        background-color: var(--black);
         & > .left, & > .right {     // Estos atributos se aplican a todos los elementos del navbar
             display: flex;
             & > .element {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: $white;
-                font-size: $font-size-normal;
+                color: var(--white);
+                font-size: var(--font-size-normal);
                 text-decoration: none;
                 padding: 0 50px 0 50px;
                 min-height: 80px;
                 cursor: default;
                 transition: color 0.3s ease-in 0s;
-                &:hover {
-                    color: $grey;
-                    transition: color 0.3s ease-in 0s;
-            }}
+            }
             & > .select {
                 position: fixed;
                 display: block;
@@ -56,21 +55,17 @@ header {
                 min-height: 19px;
                 max-width: 19px;
                 max-height: 19px;
-                background-color: $white;
-                border: 2px solid $white;
-                box-shadow: 0 0 0 1px $black;
+                background-color: var(--white);
+                border: 2px solid var(--white);
+                box-shadow: 0 0 0 1px var(--black);
                 transform: rotate(45deg);
                 top: 70px;
                 cursor: default;
                 transition: background-color 0.3s ease-in 0s;
-                &:hover {
-                    background-color: $red;
-                    transition: background-color 0.3s ease-in 0s;
-        }}}
+        }}
         & > .left {     // Left elements
             & > .element {
-                &:hover {
-            }}
+            }
             & > .select {
             }
             & > .s1 {
@@ -81,13 +76,15 @@ header {
         }}
         & > .right {     // Right elements
             & > .element {
-                &:hover {
-            }}
+            }
             & > .select {
                 }
                 & > .s3 {
                     right: 117px;
 }}}}
+
+//-----Tablet design-----
+
 @media screen and (max-width: 810px) {
     header {
         & > .spaceLeft {
@@ -96,7 +93,7 @@ header {
             & > .index {
                 width: 40px;
                 height: 40px;
-                border: 3px solid $white;
+                border: 3px solid var(--white);
                 left: 36px;
                 top: 40px;
                 & >img {
@@ -106,11 +103,10 @@ header {
             height: 60px;
             & > .left, & > .right {
                 & > .element {
-                    font-size: $font-size-smaller;
+                    font-size: var(--font-size-smaller);
                     padding: 0 20px 0 20px;
                     min-height: 60px;
-                    &:hover {
-                }}
+                }
                 & > .select {
                     min-width: 12px;
                     min-height: 12px;
@@ -120,8 +116,7 @@ header {
             }}
             & > .left {
                 & > .element {
-                &:hover {
-                }}
+                }
                 & > .select {
                 }
                 & > .s1 {
@@ -132,10 +127,87 @@ header {
             }}
             & > .right {
                 & > .element {
-                    &:hover {
-                }}
+                }
                 & > .select {
                 }
                 & > .s3 {
                     right: 70px;
 }}}}}
+
+//-----Mobile design-----
+
+@media screen and (max-width: 810px) {
+    header {
+        & > .spaceLeft {
+            max-height: 60px;
+            min-width: 85px;
+            & > .index {
+                width: 40px;
+                height: 40px;
+                border: 3px solid var(--white);
+                left: 36px;
+                top: 40px;
+                & >img {
+                width: 17px;
+        }}}
+        & > .nav {
+            height: 60px;
+            & > .left, & > .right {
+                & > .element {
+                    font-size: var(--font-size-smaller);
+                    padding: 0 20px 0 20px;
+                    min-height: 60px;
+                }
+                & > .select {
+                    min-width: 12px;
+                    min-height: 12px;
+                    max-width: 12px;
+                    max-height: 12px;
+                    top: 54px;
+            }}
+            & > .left {
+                & > .element {
+                }
+                & > .select {
+                }
+                & > .s1 {
+                    left: 124px;
+                }
+                & > .s2 {
+                    left: 240px;
+            }}
+            & > .right {
+                & > .element {
+                }
+                & > .select {
+                }
+                & > .s3 {
+                    right: 70px;
+}}}}}
+//----------//----------//----------//----------//----------
+
+//-----Dinamic designs-----
+//----------//----------//----------//----------//----------
+header > .nav > .left, header > .nav > .right {
+    & > .s1:hover ~ .e1, & > .s2:hover ~ .e2, & > .s3:hover ~ .e3, & > .element:hover{
+        color: var(--red);
+        transition: color 0.3s ease-in 0s;
+}}
+header > .spaceLeft > .index:hover {
+    border-color: red;
+}
+.txt, .txt:hover {
+    color: var(--grey) !important;
+    transition: color 0.3s ease-in 0s !important;
+}
+.ruby {
+    background-color: var(--red) !important;
+    transition: background-color 0.3s ease-in 0s !important;
+}
+.idx {
+    border-color: var(--white) !important;
+    & > img {
+        filter: none !important;
+        transition: filter 0.3s ease-in 0s !important;
+}}
+//----------//----------//----------//----------//----------

@@ -47,3 +47,34 @@ $pablo-theme: mat-light-theme((
   font-weight: $font-width-normal;
   font-size: $font-size-normal;
 }
+
+//-----Own variables, that comunicate with Global model for use on ts files-----
+
+// Colors
+:root{
+  --black: #000;
+  --dark-blur: rgba($black, 0.1);
+  --white: #FFF;
+  --grey: #707070;
+  --red: #EF0505;
+  
+  //----------//----------//----------//----------//----------
+  
+  // Font sizes
+  
+  --font-size-bigger: 32px;
+  --font-size-big: 28px;
+  --font-size-normal: 24px;
+  --font-size-small: 22px;
+  --font-size-smaller: 18px;
+  --font-size-micro: none;
+  
+  //----------//----------//----------//----------//----------
+  
+  // Font styles
+  
+  --font-width-light: 200;
+  --font-width-normal: 300;
+  --font-width-semiBold: 500;
+  --font-width-bold: 700;
+}
