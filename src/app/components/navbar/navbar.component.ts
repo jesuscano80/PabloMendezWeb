@@ -28,7 +28,7 @@ export class NavbarComponent implements AfterViewInit {
         this.scores = false;
         this.experiencies = false;
         this.contact = false;
-        this.router.navigate(['/index']);
+        this.router.navigate(['/']);
         break;
       case 1:
         this.index = false;
