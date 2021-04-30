@@ -52,7 +52,6 @@ header {
                 text-decoration: none;
                 padding: 0 50px 0 50px;
                 min-height: 80px;
-                cursor: default;
                 transition: color 0.3s ease-in 0s;
             }
             & > .select {
@@ -67,7 +66,6 @@ header {
                 box-shadow: 0 0 0 1px var(--black);
                 transform: rotate(45deg);
                 top: 70px;
-                cursor: default;
                 transition: background-color 0.3s ease-in 0s;
         }}
         & > .left {     // Left elements
@@ -213,7 +211,7 @@ header > .spaceLeft >.index:hover {
     transition: background-color 0.3s ease-in 0s !important;
 }
 .idx {
-    border-color: var(--red) !important;
+    // border-color: var(--red) !important;
     transition: border-color 0.3s ease-in 0s !important;
 }
 //----------//----------//----------//----------//----------

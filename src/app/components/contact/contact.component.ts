@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  public play1: boolean = true;
+  public play2: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

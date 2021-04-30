@@ -1,56 +1,56 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RoutersService } from '../../shared/routers.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements AfterViewInit {
-
-  public index: boolean = false;
-  public scores: boolean = false;
-  public experiencies: boolean = false;
-  public contact: boolean = false;
+export class NavbarComponent implements OnInit {  
 
   constructor(
     private router:Router,
-  ) {
-  }
-  ngAfterViewInit() {
+    public routerService: RoutersService
+  ) { }
+  ngOnInit() {
   }
   //-----Design functions-----
   //----------//----------//----------//----------//----------
   public click(num: number) {
     switch (num) {
       case 0:
-        this.index = true;
-        this.scores = false;
-        this.experiencies = false;
-        this.contact = false;
-        this.router.navigate(['/']);
+        this.routerService.links.index = true;
+        this.routerService.links.scores = false;
+        this.routerService.links.experiencies = false;
+        this.routerService.links.contact = false;
+        this.router.navigate(['/index']);
+        localStorage.setItem('links', JSON.stringify(this.routerService.links));
         break;
       case 1:
-        this.index = false;
-        this.scores = true;
-        this.experiencies = false;
-        this.contact = false;
+        this.routerService.links.index = false;
+        this.routerService.links.scores = true;
+        this.routerService.links.experiencies = false;
+        this.routerService.links.contact = false;
         this.router.navigate(['/scores']);
-      break;
+        localStorage.setItem('links', JSON.stringify(this.routerService.links));
+        break;
       case 2:
-        this.index = false;
-        this.scores = false;
-        this.experiencies = true;
-        this.contact = false;
+        this.routerService.links.index = false;
+        this.routerService.links.scores = false;
+        this.routerService.links.experiencies = true;
+        this.routerService.links.contact = false;
         this.router.navigate(['/experiencies']);
-      break;
+        localStorage.setItem('links', JSON.stringify(this.routerService.links));
+        break;
       case 3:
-        this.index = false;
-        this.scores = false;
-        this.experiencies = false;
-        this.contact = true;
+        this.routerService.links.index = false;
+        this.routerService.links.scores = false;
+        this.routerService.links.experiencies = false;
+        this.routerService.links.contact = true;
         this.router.navigate(['/contact']);
-      break;
+        localStorage.setItem('links', JSON.stringify(this.routerService.links));
+        break;
   }}
   //----------//----------//----------//----------//----------
 }

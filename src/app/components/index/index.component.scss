@@ -6,3 +6,17 @@ section {
     padding-top: 80px;
 }
 //----------//----------//----------//----------//----------
+
+//-----Global desing component-----
+//----------//----------//----------//----------//----------
+section {
+    display: flex;
+    background-color: var(--white);
+}
+video {
+    background-color: var(--black);
+    width: 100vw;
+    max-height: calc(100vh - 80px);
+    object-fit: cover;
+}
+//----------//----------//----------//----------//----------

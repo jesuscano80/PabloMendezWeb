@@ -14,6 +14,7 @@ import { IndexComponent } from './components/index/index.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ExperienciesComponent } from './components/experiencies/experiencies.component';
 import { ScoresComponent } from './components/scores/scores.component';
+import { LoginComponent } from './components/login/login.component';
 //----------//----------//----------//----------//----------//----------
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ScoresComponent } from './components/scores/scores.component';
     IndexComponent,
     ContactComponent,
     ExperienciesComponent,
-    ScoresComponent
+    ScoresComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

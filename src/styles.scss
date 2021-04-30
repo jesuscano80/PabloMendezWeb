@@ -32,21 +32,9 @@ $pablo-theme: mat-light-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($pablo-theme);
-@import "/src/variables.scss";
 
 //-----Fonts-----
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
-
-/* You can add global styles to this file, and also import other style files */
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Nunito-Sans', sans-serif;
-  font-weight: $font-width-normal;
-  font-size: $font-size-normal;
-}
 
 //-----Own variables, that comunicate with Global model for use on ts files-----
 
@@ -59,9 +47,9 @@ $pablo-theme: mat-light-theme((
   --grey2: #d0d0d0;
   --red: #EF0505;
   
-  //----------//----------//----------//----------//----------
+//----------//----------//----------//----------//----------
   
-  // Font sizes
+// Font sizes
   
   --font-size-bigger: 32px;
   --font-size-big: 28px;
@@ -70,12 +58,26 @@ $pablo-theme: mat-light-theme((
   --font-size-smaller: 18px;
   --font-size-micro: none;
   
-  //----------//----------//----------//----------//----------
+//----------//----------//----------//----------//----------
   
-  // Font styles
+// Font styles
   
   --font-width-light: 200;
   --font-width-normal: 300;
   --font-width-semiBold: 500;
   --font-width-bold: 700;
 }
+//----------//----------//----------//----------//----------
+
+/* You can add global styles to this file, and also import other style files */
+//----------//----------//----------//----------//----------
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito-Sans', sans-serif;
+  font-weight: --font-width-normal;
+  font-size: --font-size-normal;
+}
+//----------//----------//----------//----------//----------

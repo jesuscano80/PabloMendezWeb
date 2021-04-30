@@ -6,3 +6,98 @@ section {
     padding-top: 80px;
 }
 //----------//----------//----------//----------//----------
+
+//-----Global desing component-----
+//----------//----------//----------//----------//----------
+section {
+    display: flex;
+    & > .flex {
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        margin: 0 70px 0 70px;
+        & > .first {
+            display: flex;
+            width: 100%;
+            margin: 70px 0 20px 0;
+            height: fit-content;
+            & > .photo {
+                min-width: 325px;
+                max-width: 325px;
+                min-height: 325px;
+                max-height: 325px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 20px;
+                & > img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    filter: grayscale(100%);
+            }}
+            & > .biography {
+                margin-left: 20px;
+                max-height: 325px;
+                & > h1 {
+                    font-weight: var(--font-width-semiBold);
+                    font-size: var(--font-size-bigger);
+                    margin: 18px 0 22px 0;
+                }
+                & > p {
+                    font-weight: var(--font-width-normal);
+                    font-size: var(--font-size-smaller);
+                    line-height: 32px;
+        }}}
+        & > .second {
+            display: flex;
+            width: 100%;
+            height: fit-content;
+            margin: 20px 0 20px 0;
+            & > .buttons {
+                min-width: 325px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                margin-right: 20px;
+                & > .btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: var(--white);
+                    border-radius: 7px;
+                    border: 1px solid var(--black);
+                    height: 40px;
+                    width: 100%;
+                    font-weight: var(--font-width-semiBold);
+                    font-size: var(--font-size-small);
+                    cursor: pointer;
+                }
+                & > .contactForm {
+                    margin-bottom: 25px;
+                }
+                & > .newsletter {
+                    margin-top: 25px;
+                }
+            }
+            & > .videos {
+                width: 100%;
+                height: fit-content;
+                display: flex;
+                justify-content: center;
+                margin-left: 20px;
+                & > .v1 {
+                    width: 400px;
+                    margin-right: 20px;
+                    & > video {
+                        width: 100%;
+                        border-radius: 7px;
+                }}
+                & > .v2 {
+                    width: 400px;
+                    margin-left: 20px;
+                    & > video {
+                        width: 100%;
+                        border-radius: 7px;
+}}}}}}
+//----------//----------//----------//----------//----------

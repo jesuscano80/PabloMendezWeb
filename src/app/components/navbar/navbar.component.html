@@ -1,17 +1,17 @@
 <header>
     <div class="spaceLeft">
-        <div class="index" (click)="click(0)" [ngClass]="{'idx':this.index}"><img src="../assets/logo.svg" alt="logo"></div>
+        <div class="index" (click)="click(0)" [ngClass]="{'idx':this.routerService.links.index}"><img src="../assets/logo.svg" alt="logo"></div>
     </div>
     <div class="nav">
         <nav class="left">
-            <a routerLink="" (click)="click(1)" [ngClass]="{'ruby':this.scores}" class="select s1"></a>
-            <a routerLink="" (click)="click(1)" [ngClass]="{'txt':this.scores}" class="element e1">Obras</a>
-            <a routerLink="" (click)="click(2)" [ngClass]="{'ruby':this.experiencies}" class="select s2"></a>
-            <a routerLink="" (click)="click(2)" [ngClass]="{'txt':this.experiencies}" class="element e2">Experiencias</a>
+            <a routerLink="" (click)="click(1)" [ngClass]="{'ruby':this.routerService.links.scores}" class="select s1"></a>
+            <a routerLink="" (click)="click(1)" [ngClass]="{'txt':this.routerService.links.scores}" class="element e1">Obras</a>
+            <a routerLink="" (click)="click(2)" [ngClass]="{'ruby':this.routerService.links.experiencies}" class="select s2"></a>
+            <a routerLink="" (click)="click(2)" [ngClass]="{'txt':this.routerService.links.experiencies}" class="element e2">Experiencias</a>
         </nav>
         <nav class="right">
-            <a routerLink="" (click)="click(3)" [ngClass]="{'ruby':this.contact}" class="select s3"></a>
-            <a routerLink="" (click)="click(3)" [ngClass]="{'txt':this.contact}" class="element e3">Pablo Méndez</a>
+            <a routerLink="" (click)="click(3)" [ngClass]="{'ruby':this.routerService.links.contact}" class="select s3"></a>
+            <a routerLink="" (click)="click(3)" [ngClass]="{'txt':this.routerService.links.contact}" class="element e3">Pablo Méndez</a>
         </nav>
     </div>
 </header>
