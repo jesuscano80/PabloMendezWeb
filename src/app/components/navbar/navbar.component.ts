@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RoutersService } from '../../shared/routers.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +9,7 @@ import { RoutersService } from '../../shared/routers.service';
 export class NavbarComponent implements OnInit {  
 
   constructor(
-    private router:Router,
-    public routerService: RoutersService
+    public router:Router
   ) { }
   ngOnInit() {
   }
@@ -20,36 +18,16 @@ export class NavbarComponent implements OnInit {
   public click(num: number) {
     switch (num) {
       case 0:
-        this.routerService.links.index = true;
-        this.routerService.links.scores = false;
-        this.routerService.links.experiencies = false;
-        this.routerService.links.contact = false;
-        this.router.navigate(['/index']);
-        localStorage.setItem('links', JSON.stringify(this.routerService.links));
+        this.router.navigate(['index']);
         break;
       case 1:
-        this.routerService.links.index = false;
-        this.routerService.links.scores = true;
-        this.routerService.links.experiencies = false;
-        this.routerService.links.contact = false;
-        this.router.navigate(['/scores']);
-        localStorage.setItem('links', JSON.stringify(this.routerService.links));
+        this.router.navigate(['scores']);
         break;
       case 2:
-        this.routerService.links.index = false;
-        this.routerService.links.scores = false;
-        this.routerService.links.experiencies = true;
-        this.routerService.links.contact = false;
-        this.router.navigate(['/experiencies']);
-        localStorage.setItem('links', JSON.stringify(this.routerService.links));
+        this.router.navigate(['experiencies']);
         break;
       case 3:
-        this.routerService.links.index = false;
-        this.routerService.links.scores = false;
-        this.routerService.links.experiencies = false;
-        this.routerService.links.contact = true;
-        this.router.navigate(['/contact']);
-        localStorage.setItem('links', JSON.stringify(this.routerService.links));
+        this.router.navigate(['contact']);
         break;
   }}
   //----------//----------//----------//----------//----------

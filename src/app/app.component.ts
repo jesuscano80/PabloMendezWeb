@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RoutersService } from './shared/routers.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,21 +9,10 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
   constructor(
-    private router:Router,
-    private routerService: RoutersService
-  ) {
-   }
+    public router:Router,
+  ) { }
   ngOnInit(): void {
-    let flushLinks: any = (localStorage.getItem('links'))?localStorage.getItem('links'):null;
-    if (flushLinks !== null) {
-      flushLinks = JSON.parse(flushLinks);
-      this.routerService.links.index = flushLinks.index;
-      this.routerService.links.scores = flushLinks.scores;
-      this.routerService.links.experiencies = flushLinks.experiencies;
-      this.routerService.links.contact = flushLinks.contact;
-      this.routerService.refreshPage();
-    }
   }
-  onSubmit(){
+  onSubmit() {
   }
 }

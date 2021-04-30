@@ -91,13 +91,13 @@ section {
                     margin-right: 20px;
                     & > video {
                         width: 100%;
-                        border-radius: 7px;
+                        border-radius: var(--radius-small);
                 }}
                 & > .v2 {
                     width: 400px;
                     margin-left: 20px;
                     & > video {
                         width: 100%;
-                        border-radius: 7px;
+                        border-radius: var(--radius-small);
 }}}}}}
 //----------//----------//----------//----------//----------
