@@ -1,3 +1,38 @@
-<section>
-    Soy el scores
+<section (click)="hideSelectedCard()">
+    <article class="overBar">
+        <div class="design"></div> <!-- Not best solution -->
+        <form class="search">
+            <input class="searchLine" placeholder="Buscar una obra">
+            <select class="filter">
+                <option selected value="all">Todas</option>
+                <option value="{{categories[0]}}">{{categories[0]}}</option>
+                <option value="{{categories[1]}}">{{categories[1]}}</option>
+                <option value="{{categories[2]}}">{{categories[2]}}</option>
+                <option value="{{categories[3]}}">{{categories[3]}}</option>
+                <option value="{{categories[4]}}">{{categories[4]}}</option>
+            </select>
+            <button class="button"><img src="/assets/searchIcon.svg" alt="search"></button>
+        </form>
+        <button class="cart">Carrito (<span>{{countItems}}</span>)</button>
+    </article>
+    <article class="page">
+        <ng-container *ngFor="let card of cards; let i = index">
+            <div class="card card2" (click)="selectCard(i)" [ngClass]="{'card2': i === selected - 1}"
+                [ngClass]="{'cardOut': (selected !== 0) && (i !== selected - 1)}">
+                <div class="left">
+                    <img src="{{card.scoreImage}}" alt="score">
+                </div>
+                <div class="right">
+                    <div class="title">{{card.title}}</div>
+                    <div class="description">{{card.description}}</div>
+                    <div class="propierties">
+                        <div class="category">{{card.category}}</div>
+                        <div class="price">{{card.price}} €</div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </article>
+    <div class="footer">
+    </div>
 </section>

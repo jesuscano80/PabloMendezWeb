@@ -6,3 +6,175 @@ section {
     padding-top: 80px;
 }
 //----------//----------//----------//----------//----------
+
+//-----Global desing component-----
+//----------//----------//----------//----------//----------
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > .overBar {
+        position: sticky;
+        top: 80px;
+        background-color: var(--white);
+        --height: 40px;
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+        width: min(1290px, calc(100% - 40px));
+        padding: 70px 0 20px 0;
+        & >.search {
+            display: flex;
+            & > .searchLine {
+                display: block;
+                width: 380px;
+                height: var(--height);
+                border: 1px solid var(--black);
+                border-radius: var(--radius-small) 0 0 var(--radius-small);
+                padding: 5px 10px;
+                outline: none;
+                font-size: var(--font-size-smaller);
+                &::placeholder {
+                    color: var(--grey);
+                }
+            }
+            & > .filter {
+                display: block;
+                box-sizing: content-box;
+                width: 100px;
+                height: calc(var(--height) - 2px);
+                border: 1px solid var(--black);
+                border-radius: 0 !important;
+                transform: translateX(-1px);
+                background-image: url('/assets/arrowIcon.svg');
+                background-repeat: no-repeat;
+                background-position: calc(100% - 10px) 50%;
+                padding-left: 10px;
+                outline: none;
+                font-size: var(--font-size-smaller);
+            }
+            & > .button {
+                height: var(--height);
+                width: var(--height);
+                border: 1px solid var(--black);
+                border-radius: 0 var(--radius-small) var(--radius-small) 0;
+                transform: translateX(-2px);
+                background-color: var(--white);
+                & > img {
+                    width: 20px;
+                    height: 100%;
+        }}}
+        & > .cart {
+            height: 40px;
+            width: 120px;
+            border: 1px solid var(--black);
+            border-radius: var(--radius-small);
+            color: var(--white);
+            background-color: var(--black);
+            font-size: var(--font-size-smaller);
+            font-weight: var(--font-with-normal);
+            & > span {
+                color: var(--red);
+                font-size: var(--font-size-smaller);
+            }
+        }
+        // Not best solution
+        & > .design {
+            height: 40px;
+            width: 120px;
+        }
+    }
+    & > .page {
+        width: min(1340px, calc(100% - 40px));
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        & > .card {
+            display: flex;
+            background-color: var(--white);
+            width: 620px;
+            height: 300px;
+            border: 1px solid var(--black);
+            border-radius: var(--radius-small);
+            overflow: hidden;
+            cursor: pointer;
+            &:nth-child(odd) {
+                margin: 0 25px 50px 0;
+            }
+            &:nth-child(even) {
+                margin: 0 0 50px 25px;
+            }
+            & > .left {
+                & > img {
+                    height: 100%;
+                }
+            }
+            & > .right {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                padding: 25px 20px 10px 20px;
+                & > .title {
+                    font-size: var(--font-size-small);
+                    margin-bottom: 20px;
+                }
+                & > .description {
+                    font-size: var(--font-size-smaller);
+                    height: 100%;
+                }
+                & > .propierties {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    & > .category {
+                        font-size: var(--font-size-smaller);
+                        font-weight: var(--font-width-bold);
+                    }
+                    & > .price {
+                        font-size: var(--font-size-smaller);
+                        font-weight: var(--font-width-bold);
+        }}}}
+        & > .card2 {
+            width: min(1190px, 100%);
+            height: 560px;
+            margin: 0 !important;
+            &:nth-child(odd) {
+            }
+            &:nth-child(even) {
+            }
+            & > .left {
+            }
+            & > .right {
+                padding: 30px 20px 20px 30px;
+                & > .title {
+                    font-size: var(--font-size-normal);
+                    margin-bottom: 25px;
+                }
+                & > .description {
+                }
+                & > .propierties {
+                    & > .category {
+                    }
+                    & > .price {
+        }}}}
+    }
+    & .footer {
+        background-color: var(--white);
+        width: min(1340px, calc(100% - 40px));
+        height: 20px;
+        position: fixed;
+        bottom: 0;
+}}
+//----------//----------//----------//----------//----------
+@media screen and (max-width: 768px) {
+}
+//----------//----------//----------//----------//----------
+
+//-----Dinamic designs-----
+//----------//----------//----------//----------//----------
+.cardOut {
+    display: none !important;
+}
+//----------//----------//----------//----------//----------
