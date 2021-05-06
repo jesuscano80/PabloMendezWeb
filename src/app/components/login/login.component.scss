@@ -39,6 +39,12 @@ section {
                 margin-left: 5px;
             }
             & > input[type='checkbox'] {
+                width: 12px;
+                height: 12px;
+                border: 1px solid var(--black);
+                &:checked {
+                    background-color: var(--grey);
+                }
             }
         }
         & > input {
@@ -48,6 +54,7 @@ section {
             border-radius: var(--radius-smaller);
             border: 1px solid var(--black);
             padding: 5px 10px;
+            outline: none !important;
             &::placeholder {
                 color: var(--grey);
             }
