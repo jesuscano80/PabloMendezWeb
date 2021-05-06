@@ -7,6 +7,8 @@ mongoose.connect(process.env.DBASE,
         useUnifiedTopology: true,
         useFindAndModify:true,
        useCreateIndex:true })
+
+
        .then((db)=> console.log("data base working"))
        .catch((err)=> console.log(err));
 
