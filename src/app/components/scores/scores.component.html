@@ -17,7 +17,7 @@
     </article>
     <article class="page">
         <ng-container *ngFor="let card of cards; let i = index">
-            <div class="card card2" (click)="selectCard(i)" [ngClass]="{'card2': i === selected - 1}"
+            <div class="card" (click)="selectCard(i)" [ngClass]="{'card2': i === selected - 1}"
                 [ngClass]="{'cardOut': (selected !== 0) && (i !== selected - 1)}">
                 <div class="left">
                     <img src="{{card.scoreImage}}" alt="score">
@@ -28,6 +28,10 @@
                     <div class="propierties">
                         <div class="category">{{card.category}}</div>
                         <div class="price">{{card.price}} €</div>
+                    </div>
+                    <div class="buttons">
+                        <button class="forward">Atrás</button>
+                        <button class="buy">Comprar</button>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@ export class ScoresComponent implements OnInit {
   //El any se debe tipear con el modelo correspondiente
   public cards: any;
   // Use for open an especific score
-  public selected: number = 1;
+  public selected: number = 0;
   public checkCard: boolean = false;
   // For save all categories available for the search select
   public categories: string[];
@@ -28,7 +28,7 @@ export class ScoresComponent implements OnInit {
       {
         scoreImage: "/assets/partituraPrueba.jpg",
         title: "Delaroom: Pierdo el Hilo partitura para 2 guitarras",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quia exercitationem nihil nisi omnis eum harum, dignissimos ratione beatae adipisci, voluptas dolore perspiciatis...",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quia exercitationem nihil nisi omnis eum harum, dignissimos ratione beatae adipisci, voluptas dolore perspiciatis...Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quia exercitationem nihil nisi omnis eum harum, dignissimos ratione beatae adipisci, voluptas dolore perspiciatis...Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quia exercitationem nihil nisi omnis eum harum, dignissimos ratione beatae adipisci, voluptas dolore perspiciatis...Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quia exercitationem nihil nisi omnis eum harum, dignissimos ratione beatae adipisci, voluptas dolore perspiciatis...Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quia exercitationem nihil nisi omnis eum harum, dignissimos ratione beatae adipisci, voluptas dolore perspiciatis...Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quia exercitationem nihil nisi omnis eum harum, dignissimos ratione beatae adipisci, voluptas dolore perspiciatis...Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quia exercitationem nihil nisi omnis eum harum, dignissimos ratione beatae adipisci, voluptas dolore perspiciatis...Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quia exercitationem nihil nisi omnis eum harum, dignissimos ratione beatae adipisci, voluptas dolore perspiciatis...Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quia exercitationem nihil nisi omnis eum harum, ",
         category: ["guitarra", "dúos"],
         price: "49,99"
       },

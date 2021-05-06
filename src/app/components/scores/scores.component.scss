@@ -13,7 +13,6 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     & > .overBar {
         position: sticky;
         top: 80px;
@@ -24,6 +23,7 @@ section {
         height: fit-content;
         width: min(1290px, calc(100% - 40px));
         padding: 70px 0 20px 0;
+        z-index: 1;
         & >.search {
             display: flex;
             & > .searchLine {
@@ -37,8 +37,7 @@ section {
                 font-size: var(--font-size-smaller);
                 &::placeholder {
                     color: var(--grey);
-                }
-            }
+            }}
             & > .filter {
                 display: block;
                 box-sizing: content-box;
@@ -77,14 +76,12 @@ section {
             & > span {
                 color: var(--red);
                 font-size: var(--font-size-smaller);
-            }
-        }
+        }}
         // Not best solution
         & > .design {
             height: 40px;
             width: 120px;
-        }
-    }
+    }}
     & > .page {
         width: min(1340px, calc(100% - 40px));
         display: flex;
@@ -109,8 +106,7 @@ section {
             & > .left {
                 & > img {
                     height: 100%;
-                }
-            }
+            }}
             & > .right {
                 display: flex;
                 flex-direction: column;
@@ -122,10 +118,13 @@ section {
                 }
                 & > .description {
                     font-size: var(--font-size-smaller);
-                    height: 100%;
+                    min-height: 150px;
+                    margin: 0 0 22px 0;
+                    overflow: hidden;
                 }
                 & > .propierties {
                     display: flex;
+                    position: relative;
                     width: 100%;
                     justify-content: space-between;
                     & > .category {
@@ -135,6 +134,12 @@ section {
                     & > .price {
                         font-size: var(--font-size-smaller);
                         font-weight: var(--font-width-bold);
+                }}
+                & > .buttons {
+                    display: none;
+                    & > .forward {
+                    }
+                    & > .buy {
         }}}}
         & > .card2 {
             width: min(1190px, 100%);
@@ -145,6 +150,7 @@ section {
             &:nth-child(even) {
             }
             & > .left {
+                min-width: fit-content;
             }
             & > .right {
                 padding: 30px 20px 20px 30px;
@@ -153,13 +159,28 @@ section {
                     margin-bottom: 25px;
                 }
                 & > .description {
+                    height: 100%;
+                    margin: 0;
+                    overflow: auto;
+                    background: burlywood;
+                    transform: translateY(41px);
                 }
                 & > .propierties {
+                    transform: translateY(-403px);
                     & > .category {
                     }
                     & > .price {
-        }}}}
-    }
+                }}
+                & > .buttons {
+                    display: flex;
+                    height: 40px;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: flex-end;
+                    & > .forward {
+                    }
+                    & > .buy {
+    }}}}}
     & .footer {
         background-color: var(--white);
         width: min(1340px, calc(100% - 40px));
