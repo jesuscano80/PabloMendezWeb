@@ -1,4 +1,4 @@
-//-----Common for all components-----
+//----- Common for all components -----
 //----------//----------//----------//----------//----------
 section {
     min-height: 100%;
@@ -7,7 +7,7 @@ section {
 }
 //----------//----------//----------//----------//----------
 
-//-----Global desing component-----
+//----- Global desing component -----
 //----------//----------//----------//----------//----------
 section {
     display: flex;
@@ -73,10 +73,10 @@ section {
                     font-size: var(--font-size-small);
                     cursor: pointer;
                 }
-                & > .contactForm {
+                & > .contactForm, & > .editBiography {
                     margin-bottom: 25px;
                 }
-                & > .newsletter {
+                & > .newsletter, & > .editVideos {
                     margin-top: 25px;
                 }
             }

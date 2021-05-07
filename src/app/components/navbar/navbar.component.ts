@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   ) { }
   ngOnInit() {
   }
-  //-----Design functions-----
+  //----- Design functions -----
   //----------//----------//----------//----------//----------
   public click(num: number) {
     switch (num) {

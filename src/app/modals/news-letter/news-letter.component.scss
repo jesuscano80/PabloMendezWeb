@@ -1,0 +1,42 @@
+//----- Global desing modal -----
+//----------//----------//----------//----------//----------
+section {
+    height: fit-content;
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    & > h2 {
+        margin: 10px 0 30px 0;
+        font-size: var(--font-size-big);
+        font-weight: var(--font-width-bold);
+    }
+    & > .input {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        & > label {
+            margin-right: 20px;
+            font-weight: var(--font-width-semiBold);
+            font-size: var(--font-size-small);
+        }
+        & > input {
+            border: 1px solid var(--black);
+            border-radius: var(--radius-smaller);
+            outline: none;
+            font-size: var(--font-size-smaller);
+            width: 100%;
+            padding: 0 10px;
+            height: 32px;
+            &::placeholder {
+                color: var(--grey);
+    }}}
+    & > .buttons {
+        margin-top: 20px;
+        align-self: flex-end;
+        & > .cancelBtn {
+            margin-right: 20px;
+        }
+}}
+//----------//----------//----------//----------//----------

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../shared/login.service';
 
 @Component({
   selector: 'app-scores',
@@ -9,15 +10,18 @@ export class ScoresComponent implements OnInit {
 
   //El any se debe tipear con el modelo correspondiente
   public cards: any;
-  // Use for open an especific score
+  // Use for open and close an especific score
   public selected: number = 0;
   public checkCard: boolean = false;
+  public forward: boolean = false;
   // For save all categories available for the search select
   public categories: string[];
   // For save te count of items to buy
   public countItems : number;
 
-  constructor() {
+  constructor(
+    public loginService: LoginService
+  ) {
 
     // For create the categories array with the data of BBDD
     this.categories = ['clásico', 'indie', 'rock', 'jazz', 'blues'].map(e => e.charAt(0).toUpperCase() + e.slice(1));
@@ -91,15 +95,20 @@ export class ScoresComponent implements OnInit {
   //-----Design functions-----
   //----------//----------//----------//----------//----------
   public selectCard(select: number = 0) {
-    this.checkCard = true;
-    this.selected = select + 1;
-    
-  }
+    if(!this.forward) {
+      this.checkCard = true;
+      this.selected = select + 1;
+  }}
   public hideSelectedCard() {
     if(this.checkCard === false) {
       this.selected = 0;
     }
     this.checkCard = false;
+    this.forward = false;
+  }
+  public backForward() {
+    this.forward = true;
   }
   //----------//----------//----------//----------//----------
+ 
 }

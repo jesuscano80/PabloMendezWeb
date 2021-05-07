@@ -20,8 +20,10 @@
         </div>
         <div class="second">
             <div class="buttons">
-                <div class="btn contactForm">Contactar con Pablo</div>
-                <div class="btn newsletter">Alerta de novedades</div>
+                <div class="btn contactForm" (click)="openContactForm()" [ngClass]="{'notDisplay': this.loginService.isLogin}">Contactar con Pablo</div>
+                <div class="btn editBiography" (click)="openEditBiography()" [ngClass]="{'notDisplay': !this.loginService.isLogin}">Editar biografía</div>
+                <div class="btn newsletter" (click)="openNewsletter()" [ngClass]="{'notDisplay': this.loginService.isLogin}">Alerta de novedades</div>
+                <div class="btn editVideos" (click)="openEditVideos()" [ngClass]="{'notDisplay': !this.loginService.isLogin}">Editar vídeos</div>
             </div>
             <div class="videos">
                 <div class="v1">

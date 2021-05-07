@@ -1,0 +1,24 @@
+<form>
+    <div class="name">
+        <label for="Name">Nombre:</label>
+        <input type="text" id="name">
+    </div>
+    <div class="mail">
+        <label for="mail">Correo:</label>
+        <input type="email" id="mail">
+    </div>
+    <div class="message">
+        <label for="message">Mensaje:</label>
+        <textarea type="text" id="message"></textarea>
+    </div>
+    <div class="bar">
+        <div class="checkbox">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox">Subscríbete a mi Newsletter</label>
+        </div>
+        <div class="buttons">
+            <button class="cancelBtn" mat-dialog-close>Cancelar</button>
+            <button class="nextBtn" (click)="next()">Enviar</button>
+        </div>
+    </div>
+</form>

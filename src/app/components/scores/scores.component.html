@@ -13,12 +13,13 @@
             </select>
             <button class="button"><img src="/assets/searchIcon.svg" alt="search"></button>
         </form>
-        <button class="cart">Carrito (<span>{{countItems}}</span>)</button>
+        <button class="cart" [ngClass]="{'notDisplay': this.loginService.isLogin}">Carrito (<span>{{countItems}}</span>)</button>
+        <button class="newScore" [ngClass]="{'notDisplay': !this.loginService.isLogin}">Añadir</button>
     </article>
     <article class="page">
         <ng-container *ngFor="let card of cards; let i = index">
             <div class="card" (click)="selectCard(i)" [ngClass]="{'card2': i === selected - 1}"
-                [ngClass]="{'cardOut': (selected !== 0) && (i !== selected - 1)}">
+                [ngClass]="{'notDisplay': (selected !== 0) && (i !== selected - 1)}">
                 <div class="left">
                     <img src="{{card.scoreImage}}" alt="score">
                 </div>
@@ -26,12 +27,16 @@
                     <div class="title">{{card.title}}</div>
                     <div class="description">{{card.description}}</div>
                     <div class="propierties">
-                        <div class="category">{{card.category}}</div>
+                        <div class="left">
+                            <div class="pages"><img src="/assets/partiture.svg" alt="scores"><span>{{selected}}</span></div>
+                            <div class="category"><img src="/assets/folderIcon.svg" alt="carpet">{{card.category}}</div>
+                        </div>
                         <div class="price">{{card.price}} €</div>
                     </div>
                     <div class="buttons">
-                        <button class="forward">Atrás</button>
-                        <button class="buy">Comprar</button>
+                        <button class="cancelBtn" (click)="backForward()">Atrás</button>
+                        <button class="nextBtn" [ngClass]="{'notDisplay': this.loginService.isLogin}">Comprar</button>
+                        <button class="nextBtn" [ngClass]="{'notDisplay': !this.loginService.isLogin}">Editar</button>
                     </div>
                 </div>
             </div>

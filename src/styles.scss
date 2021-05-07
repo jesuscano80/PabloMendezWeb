@@ -33,15 +33,15 @@ $pablo-theme: mat-light-theme((
 // that you are using.
 @include angular-material-theme($pablo-theme);
 
-//-----Fonts-----
+//----- Fonts -----
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
-//-----Own variables, that comunicate with Global model for use on ts files-----
+//----- Own variables, that comunicate with Global model for use on ts files -----
 
 // Colors
 :root{
   --black: #000;
-  // --dark-blur: rgba(var(--black), 0.1);
+  --dark-blur: rgba( 0, 0, 0, .3);
   --white: #FFF;
   --grey: #707070;
   --grey2: #d0d0d0;
@@ -90,4 +90,54 @@ $pablo-theme: mat-light-theme((
   font-weight: var(--font-width-normal);
   font-size: var(--font-size-small);
 }
+.notDisplay {
+  display: none !important;
+}
+.cancelBtn, .nextBtn {
+  background-color: var(--white);
+  border-radius: var(--radius-smaller);
+  font-size: var(--font-size-smaller);
+  height: 32px;
+  width: 150px;
+  cursor: pointer;
+}
+.cancelBtn {
+  border: 1px solid var(--black);
+  color: var(--black);
+}
+.nextBtn {
+  border: 1px solid var(--red);
+  color: var(--red);
+}
+input[type='checkbox'] {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--black);
+  &:checked {
+    background-color: var(--grey);
+}}
+input[type='checkbox'] + label {
+  margin-left: 5px;
+}
+
+//----------//----------//----------//----------//----------
+
+// ----- Edit Angular styles -----
+//----------//----------//----------//----------//----------
+
+.cdk-overlay-container 
+{
+  z-index: 10000000000000000000000000000000000000000000000000000;
+}
+.cdk-overlay-dark-backdrop {
+  background: var(--dark-blur);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+.mat-dialog-container {
+  border: 1px solid var(--black);
+  border-radius: var(--radius-small) !important;
+}
+
 //----------//----------//----------//----------//----------

@@ -4,17 +4,29 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/material-module';
+import { HttpClientModule } from '@angular/common/http';
 
 //----- imports of components ------
 //----------//----------//----------//----------//----------//----------
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar//navbar.component';
 import { IndexComponent } from './components/index/index.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ExperienciesComponent } from './components/experiencies/experiencies.component';
 import { ScoresComponent } from './components/scores/scores.component';
 import { LoginComponent } from './components/login/login.component';
+import { CartComponent } from './components/cart/cart.component';
+import { NewScoreComponent } from './components/new-score/new-score.component';
+//----------//----------//----------//----------//----------//----------
+
+//----- imports of modals ------
+//----------//----------//----------//----------//----------//----------
+import { SimpleNotificationComponent } from './modals/simple-notification/simple-notification.component';
+import { TwoWaysNotificationComponent } from './modals/two-ways-notification/two-ways-notification.component';
+import { ContactFormComponent } from './modals/contact-form/contact-form.component';
+import { NewsLetterComponent } from './modals/news-letter/news-letter.component';
+import { EditVideosComponent } from './modals/edit-videos/edit-videos.component';
+import { EditBiographyComponent } from './modals/edit-biography/edit-biography.component';
 //----------//----------//----------//----------//----------//----------
 
 @NgModule({
@@ -25,7 +37,15 @@ import { LoginComponent } from './components/login/login.component';
     ContactComponent,
     ExperienciesComponent,
     ScoresComponent,
-    LoginComponent
+    LoginComponent,
+    SimpleNotificationComponent,
+    TwoWaysNotificationComponent,
+    ContactFormComponent,
+    NewsLetterComponent,
+    CartComponent,
+    NewScoreComponent,
+    EditVideosComponent,
+    EditBiographyComponent
   ],
   imports: [
     BrowserModule,
