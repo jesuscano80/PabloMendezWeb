@@ -1,14 +1,37 @@
 <section>
-    <form>
-        <h2>Pablo Méndez</h2>
-        <label class="lbl" for="usr">Usuario</label>
-        <input id="usr" type="email" placeholder="example@example.com">
-        <label class="lbl" for="passwd">Contraseña</label>
-        <input id="passwd" type="password" placeholder="############">
-        <div class="checkbox">
-            <input id="check" type="checkbox">
-            <label class="lbl2" for="check">Recordar credenciales</label>
-        </div>
-        <button class="send">Ingresa</button>
-    </form>
+  <form
+    #loginForm="ngForm"
+    (ngSubmit)="(loginForm.invalid) ? ' mal' : onSubmit(loginForm)"
+  >
+    <h2>Pablo Méndez</h2>
+    <label class="lbl" for="usr">Usuario</label>
+    <input
+      id="usr"
+      name="username"
+      placeholder="Nombre de usuario"
+      placeholder="{{loginForm.submitted && username.invalid ?  'Nombre obligatorio' : 'Nombre de usuario'}}"
+      [(ngModel)]="login.username"
+      #username="ngModel"
+      type="text"
+      [ngClass]="{'invalidForm':loginForm.submitted && username.invalid }"
+      required
+    />
+    <label class="lbl" for="passwd">Contraseña</label>
+    <input
+      id="passwd"
+      name="password"
+      placeholder="{{loginForm.submitted && password.invalid ?  'Contraseña obligatoria 6 caracteres' : 'Contraseña'}}"
+      [(ngModel)]="login.password"
+      #password="ngModel"
+      type="password"
+      [ngClass]="{'invalidForm':loginForm.submitted && password.invalid }"
+      minlength="6"
+      required
+    />
+    <div class="checkbox">
+      <input id="check" type="checkbox" />
+      <label class="lbl2" for="check">Recordar credenciales</label>
+    </div>
+    <button class="send">Ingresa</button>
+  </form>
 </section>

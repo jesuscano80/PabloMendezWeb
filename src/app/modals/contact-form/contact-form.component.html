@@ -1,24 +1,46 @@
-<form>
+<form #contactForm="ngForm" (ngSubmit)="(contactForm.invalid) ? ' mal' : onSubmit(contactForm)">
     <div class="name">
         <label for="Name">Nombre:</label>
-        <input type="text" id="name">
+        <input type="text" id="name"
+        [(ngModel)]="contact.name"
+        name="name"
+        #name="ngModel"
+        [ngClass]="{'invalidForm':contactForm.submitted && name.invalid }"
+        required>
     </div>
     <div class="mail">
         <label for="mail">Correo:</label>
-        <input type="email" id="mail">
+        <input type="email" id="mail"
+        name="email"
+        [(ngModel)]="contact.email"
+        #email="ngModel"
+        [ngClass]="{'invalidForm':contactForm.submitted && email.invalid }"
+        email
+        required>
     </div>
     <div class="message">
         <label for="message">Mensaje:</label>
-        <textarea type="text" id="message"></textarea>
+        <textarea type="text" id="message"
+        name="message"
+        [(ngModel)]="contact.message"
+        #message="ngModel"
+        [ngClass]="{'invalidForm':contactForm.submitted && message.invalid }"
+        required>
+    </textarea>
     </div>
     <div class="bar">
         <div class="checkbox">
-            <input type="checkbox" id="checkbox">
+            <input type="checkbox" id="checkbox"
+            name="subscribe"
+            [(ngModel)]="contact.subscribe"
+            #subscribe="ngModel"
+            [ngClass]="{'invalidForm':contactForm.submitted && subscribe.invalid }"
+            >
             <label for="checkbox">Subscríbete a mi Newsletter</label>
         </div>
         <div class="buttons">
             <button class="cancelBtn" mat-dialog-close>Cancelar</button>
-            <button class="nextBtn" (click)="next()">Enviar</button>
+            <button class="nextBtn" >Enviar</button>
         </div>
     </div>
 </form>
