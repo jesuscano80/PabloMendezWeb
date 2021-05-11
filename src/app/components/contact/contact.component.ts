@@ -13,15 +13,32 @@ import { EditBiographyComponent } from '../../modals/edit-biography/edit-biograp
 })
 export class ContactComponent implements OnInit {
 
-  public play1: boolean = true;
-  public play2: boolean = true;
+  // Estas variables se deben agrupar en un json ya son propiedades de un mismo objeto
+  public title: string;
+  public description: string;
+  public photo: string;
 
   constructor(
     public loginService: LoginService,
     private matDialog:MatDialog
-  ) { }
+  ) {
+    // Cambiar para meter la información desde el back
+    this.title = "Compositor musical";
+    this.description = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique perspiciatis illo,
+    suscipit dolore pariatur provident at nulla doloremque aspernatur commodi accusantium
+    et neque unde modi iste cupiditate ea, labore totam. Sint aliquid animi numquam sunt
+    necessitatibus ab similique sit maxime accusamus? Reprehenderit numquam amet dolor
+    magni illo am sunt necessitatibus ab similique sit maxime accusamus? Reprehenderit
+    numquam am sunt necessitatibus ab similique sit maxime accusamus? Reprehenderit
+    numquam rehenderit numquam am sunt necessitatibus ab similique sit maxime accusamus?
+    numquam rehenderit numquam am sunt necessitatibus ab similique sit maxime accusamus?
+    numquam rehenderit numquam am sunt necessitatibus ab similique sit maxime accusamus?
+    numquam rehenderit numquam am sunt necessitatibus`;
+    this.photo = "assets/Pablico.jpeg";
+  }
 
   ngOnInit(): void {
+    this.openEditVideos()
   }
   //----- Open Modals -----
   //----------//----------//----------//----------//----------

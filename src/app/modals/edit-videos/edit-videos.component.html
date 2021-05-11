@@ -1,1 +1,35 @@
-<p>edit-videos works!</p>
+<section>
+    <div class="top">
+        <div class="v1">
+            <label for="vIndex">
+                Vídeo inicio
+            </label>
+            <input id="vIndex" type="file">
+            <div class="video">
+                <video  playsinline="true"  [loop]="true" preload="auto" controls><source src="{{vIndex}}" type="video/mp4">Sorry, your browser doesn't support embedded videos.</video>
+            </div>
+        </div>
+        <div class="v2">
+            <label for="video1">
+                Vídeo 1
+            </label>
+            <input id="video1" type="file">
+            <div class="video">
+                <video  playsinline="true"  [loop]="true" preload="auto" controls><source src="{{video1}}" type="video/mp4">Sorry, your browser doesn't support embedded videos.</video>
+            </div>
+        </div>
+        <div class="v3">
+            <label for="video2">
+                Vídeo 2
+            </label>
+            <input id="video2" type="file">
+            <div class="video">
+                <video  playsinline="true"  [loop]="true" preload="auto" controls><source src="{{video2}}" type="video/mp4">Sorry, your browser doesn't support embedded videos.</video>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="cancelBtn" mat-dialog-close>Cancelar</button>
+        <button class="nextBtn" (click)="saveEdit()">Guardar</button>
+    </div>
+</section>
