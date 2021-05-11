@@ -38,7 +38,6 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.openEditVideos()
   }
   //----- Open Modals -----
   //----------//----------//----------//----------//----------

@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class LoginService {
 
   //Editar para verificar el logueo de Pablo en la app y acceder como admin
-  // public isLogin: boolean = false;
-  public isLogin: boolean = true;
+  public isLogin: boolean = false;
+  // public isLogin: boolean = true;
 
   constructor() { }
   //Editar para verificar el logueo de Pablo en la app y acceder como admin
