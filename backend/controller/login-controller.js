@@ -2,6 +2,7 @@ require("dotenv").config();
 import jwt from "jsonwebtoken";
 
 export const login = async (req, res)=>{
+    console.log(req.body);
     const {username, password} =req.body;
     
     if (username!= process.env.USER || password != process.env.PASSWORD){

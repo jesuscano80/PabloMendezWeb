@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/material-module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 //----- imports of components ------
 //----------//----------//----------//----------//----------//----------
@@ -28,6 +28,12 @@ import { NewsLetterComponent } from './modals/news-letter/news-letter.component'
 import { EditVideosComponent } from './modals/edit-videos/edit-videos.component';
 import { EditBiographyComponent } from './modals/edit-biography/edit-biography.component';
 //----------//----------//----------//----------//----------//----------
+
+//----- imports of guards ------
+import { AuthGuard } from "./guards/auth.guard";
+//----------//----------//----------//----------//----------//----------
+import { TokenInterceptorService } from "./shared/token-interceptor.service";
+
 
 @NgModule({
   declarations: [
@@ -55,7 +61,14 @@ import { EditBiographyComponent } from './modals/edit-biography/edit-biography.c
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
