@@ -5,7 +5,7 @@
       =>  Here you can search for them by type of music or instrument,and you can buy with a shopping cart, and pay by Stripe and download them.
   - ## Has an experience zone 🎶
       => Pablo can define as in a blog, text, photos and videos to show his music and lifestyle.
-  - ## Owner has a admin zone 👑
+  - ## Owner has an admin zone 👑
       => He can customize almost the entire web, changing images, videos, texts. He can create new musical scores and experiences.
   - ## And a contact form 📧
       => You can get in touch with this famous musician send him an email  
