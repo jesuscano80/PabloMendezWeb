@@ -11,7 +11,7 @@ import { SimpleNotificationComponent } from '../simple-notification/simple-notif
 })
 export class ContactFormComponent implements OnInit {
 
-  public contact= new Contact("","","",true);
+  public contact = new Contact('', '', '', true);
 
   constructor(
     private dialogRef: MatDialogRef<ContactFormComponent>,
@@ -29,16 +29,15 @@ export class ContactFormComponent implements OnInit {
   // }
 
   onSubmit(form: any){
-    console.log(form);
-    console.log(form.value);
+
     this.sendEmail.postEmail(form.value).subscribe(
-      (data)=>{
-        console.log(data)
+      (data) => {
+        console.log(data);
       },
-      (err)=>{
-        console.log(err)
+      (err) => {
+        console.log(err);
       }
-    )
-    
+    );
+
   }
 }

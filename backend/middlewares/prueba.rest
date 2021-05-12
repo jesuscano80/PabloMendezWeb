@@ -21,3 +21,19 @@ Authorization: Bearer aeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiUGVkcm9N
 POST http://localhost:3000/refresh
 Content-Type: application/json
 refresh: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiUGVkcm9NZW5kZXoiLCJpYXQiOjE2MTc5NjQ5ODMsImV4cCI6MTYxNzk2NzM4M30.5Vo3qy-KcUURlblZq62aaW_l_khPpFldlHYKrul186k
+
+
+###
+POST http://localhost:3000/biography
+Content-Type: application/json
+
+{
+    "title":"Compositor musical",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique perspiciatis illo, suscipit dolore pariatur provident at nulla doloremque aspernatur commodi accusantium et neque unde modi iste cupiditate ea, labore totam. Sint aliquid animi numquam sunt necessitatibus ab similique sit maxime accusamus? Reprehenderit numquam amet dolor magni illo am sunt necessitatibus ab similique sit maxime accusamus? Reprehenderit numquam am sunt necessitatibus ab similique sit maxime accusamus? Reprehenderit numquam rehenderit numquam am sunt necessitatibus ab similique sit maxime accusamus? numquam rehenderit numquam am sunt necessitatibus ab similique sit maxime accusamus? numquam rehenderit numquam am sunt necessitatibus ab similique sit maxime accusamus? numquam rehenderit numquam am sunt necessitatibus",
+    "photo":"assets/Pablico.jpeg"
+}
+
+###
+GET http://localhost:3000/biography
+Content-Type: application/json
+

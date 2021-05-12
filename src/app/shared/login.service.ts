@@ -9,49 +9,49 @@ import { Login } from '../models/login';
 })
 export class LoginService {
 
-  private global:Global = new Global();
-  private url= this.global.url + "login";
+  private global: Global = new Global();
+  private url = this.global.url + 'login';
 
-  //Editar para verificar el logueo de Pablo en la app y acceder como admin
-  public isLogin: boolean = false;
+  // Editar para verificar el logueo de Pablo en la app y acceder como admin
+  public isLogin = false;
   // public isLogin: boolean = true;
 
   constructor(
-    private http:HttpClient,
-    private router:Router
+    private http: HttpClient,
+    private router: Router
     ) { }
 
 
-  //Editar para verificar el logueo de Pablo en la app y acceder como admin
+  // Editar para verificar el logueo de Pablo en la app y acceder como admin
   public login() {
     this.isLogin = !this.isLogin;
   }
 
-  public postLogin(form:Login){
+  public postLogin(form: Login){
     console.log(form);
-    return this.http.request("POST",this.url,{
+    return this.http.request('POST', this.url, {
       headers: new HttpHeaders ({ 'Content-Type': 'application/json' }),
       body: form
-    })}
+    }); }
 
-   public loggedIn():Boolean{
-     if (localStorage.getItem("token")){
-       return true
+   public loggedIn(): Boolean{
+     if (localStorage.getItem('token')){
+       return true;
      }
      else{
-       return false
+       return false;
      }
-   } 
+   }
 
    public getToken(){
-     return localStorage.getItem("token")
+     return localStorage.getItem('token');
    }
 
    public logOut(){
-     localStorage.removeItem("token");
+     localStorage.removeItem('token');
      this.login();
-     this.router.navigate(["index"])
+     this.router.navigate(['index']);
 
    }
   }
-  
+

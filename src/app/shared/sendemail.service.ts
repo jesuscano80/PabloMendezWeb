@@ -8,17 +8,17 @@ import { Global } from '../models/global';
 })
 export class SendemailService {
 
-public global:Global= new Global();
-public url= this.global.url + "sendemail";
+public global: Global = new Global();
+public url = this.global.url + 'sendemail';
 
 constructor(
-    public http:HttpClient
+    public http: HttpClient
     ) { }
 
   postEmail(form: Contact){
     console.log(this.url);
     console.log(form);
-   return this.http.post(this.url, form)
-    
+    return this.http.post(this.url, form);
+
   }
 }

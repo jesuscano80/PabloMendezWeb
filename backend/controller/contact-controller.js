@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export const sendEmail = async (req, res)=>{
     const {name, email, message, subscribe}= req.body;
-    const structure= `<h1>Envio de correo prueba</h1>
+    const structure= `<h1>Envio de formulario web Pablo Méndez</h1>
     <ul>
         <li> Usuario : ${name}</li>
         <li> Email : ${email}</li>     

@@ -13,8 +13,8 @@ export class NavbarComponent implements OnInit {
   ) { }
   ngOnInit() {
   }
-  //----- Design functions -----
-  //----------//----------//----------//----------//----------
+  // ----- Design functions -----
+  // ----------//----------//----------//----------//----------
   public click(num: number) {
     switch (num) {
       case 0:
@@ -30,5 +30,5 @@ export class NavbarComponent implements OnInit {
         this.router.navigate(['contact']);
         break;
   }}
-  //----------//----------//----------//----------//----------
+  // ----------//----------//----------//----------//----------
 }

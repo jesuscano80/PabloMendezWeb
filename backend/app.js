@@ -5,6 +5,8 @@ import cors from "cors"
 import blogRoutes from "./routes/blog-routes"
 import loginRoutes from "./routes/login.routes"
 import contactRoutes from "./routes/contact-routes"
+import biographyRoutes from "./routes/biography-routes"
+import videosRoutes from "./routes/videos-routes"
 import compression from "compression";
 const corsOptions = {
     "Access-Control-Allow-Methods" : ['GET', 'PUT', 'POST', 'DELETE']
@@ -23,7 +25,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(blogRoutes);
 app.use(loginRoutes);
 app.use(contactRoutes);
-
+app.use(biographyRoutes);
+app.use(videosRoutes);
 
 
 export default app;

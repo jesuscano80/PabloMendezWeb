@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimpleNotificationComponent implements OnInit {
 
-  public message: string = "";
+  public message = '';
 
   constructor() { }
 
