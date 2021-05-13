@@ -13,15 +13,13 @@ import { Router } from '@angular/router';
 })
 export class EditBiographyComponent implements OnInit {
 
-  // Estas variables se deben agrupar en un json ya son propiedades de un mismo objeto
   public bio: any;
-  public error = '';
+  public error: string= '';
 
   constructor(
     private dialogRef: MatDialogRef<EditBiographyComponent>,
     private matDialog: MatDialog,
-    private biographyService: BiographyService,
-    private router: Router
+    private biographyService: BiographyService
   ) {
     this.bio = {
       title: 'Compositor musical',

@@ -1,12 +1,13 @@
-<form #contactForm="ngForm" (ngSubmit)="(contactForm.invalid) ? ' mal' : onSubmit(contactForm)">
+<form #contactForm="ngForm" (ngSubmit)="(contactForm.invalid) ? null : onSubmit(contactForm)" [ngClass]="{'onSubmit': nextBtn.disabled === true}">
     <div class="name">
         <label for="Name">Nombre:</label>
         <input type="text" id="name"
         [(ngModel)]="contact.name"
         name="name"
         #name="ngModel"
-        [ngClass]="{'invalidForm':contactForm.submitted && name.invalid }"
+        [ngClass]="{'inputError':contactForm.submitted && name.invalid}"
         required>
+        <p class="notDisplay" [class]="{'textError': contactForm.submitted && name.invalid}">*</p>
     </div>
     <div class="mail">
         <label for="mail">Correo:</label>
@@ -14,17 +15,21 @@
         name="email"
         [(ngModel)]="contact.email"
         #email="ngModel"
-        [ngClass]="{'invalidForm':contactForm.submitted && email.invalid }"
+        [ngClass]="{'inputError':contactForm.submitted && email.invalid}"
         email
         required>
+        <p class="notDisplay" [class]="{'textError': contactForm.submitted && email.invalid}">*</p>
     </div>
     <div class="message">
-        <label for="message">Mensaje:</label>
+        <div>
+            <label for="message">Mensaje:</label>
+            <p class="notDisplay" [class]="{'textError': contactForm.submitted && message.invalid}">*</p>
+        </div>
         <textarea type="text" id="message"
         name="message"
         [(ngModel)]="contact.message"
         #message="ngModel"
-        [ngClass]="{'invalidForm':contactForm.submitted && message.invalid }"
+        [ngClass]="{'inputError':contactForm.submitted && message.invalid}"
         required>
     </textarea>
     </div>
@@ -34,13 +39,16 @@
             name="subscribe"
             [(ngModel)]="contact.subscribe"
             #subscribe="ngModel"
-            [ngClass]="{'invalidForm':contactForm.submitted && subscribe.invalid }"
+            [ngClass]="{'inputError':contactForm.submitted && subscribe.invalid}"
             >
             <label for="checkbox">Subscríbete a mi Newsletter</label>
         </div>
         <div class="buttons">
-            <button class="cancelBtn" mat-dialog-close>Cancelar</button>
-            <button class="nextBtn" >Enviar</button>
+            <p class="notDisplay" [class]="{'textError': contactForm.submitted}">Comprueba los campos marcados por (*)</p>
+            <div class="btn">
+                <p class="cancelBtn" mat-dialog-close>Cancelar</p>
+                <button class="nextBtn" #nextBtn>Enviar</button>
+            </div>
         </div>
     </div>
 </form>

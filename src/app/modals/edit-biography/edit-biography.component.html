@@ -1,5 +1,3 @@
-<!-- NOTA: Jesús las variables creadas en el ts son para que los inputs tengan la información metida
-de primeras. Los inputs no se muestran vacíos sino la información que hay se mete como value -->
 <form #editbioForm="ngForm" (ngSubmit)="(editbioForm.invalid) ? 'mal' : onSubmit(editbioForm.value)">
     <div class="top">
         <div class="img">
@@ -27,8 +25,7 @@ de primeras. Los inputs no se muestran vacíos sino la información que hay se m
                 value="{{bio.title}}"
                 [(ngModel)]="bio.title"
                 #title="ngModel"
-                >
-                
+            >
             </div>
             <div class="description">
                 <label for="description">Descripción:</label>
