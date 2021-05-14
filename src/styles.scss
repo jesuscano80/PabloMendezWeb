@@ -57,6 +57,7 @@ $pablo-theme: mat-light-theme((
   --font-size-small: 22px;
   --font-size-smaller: 18px;
   --font-size-micro: 14px;
+  --font-size-nano: 11px;
   
 //----------//----------//----------//----------//----------
   
@@ -94,6 +95,9 @@ $pablo-theme: mat-light-theme((
   display: none !important;
 }
 .cancelBtn, .nextBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--white);
   border-radius: var(--radius-smaller);
   font-size: var(--font-size-smaller);
@@ -109,6 +113,15 @@ $pablo-theme: mat-light-theme((
   border: 1px solid var(--red);
   color: var(--red);
 }
+.cancelBtn:disabled, .nextBtn:disabled {
+  border-color: var(--grey);
+  color: var(--grey) !important;
+  background-image: url("/assets/loading.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  transition: border-color .3s linear color .3s linear;
+}
 input[type='checkbox'] {
   width: 12px;
   height: 12px;
@@ -119,14 +132,27 @@ input[type='checkbox'] {
 input[type='checkbox'] + label {
   margin-left: 5px;
 }
+.inputError {
+  border-color:red !important;
+}
+.textError {
+  display: initial !important;
+  min-width: fit-content;
+  font-size: var(--font-size-micro);
+  color: var(--red);
+}
+
+@media screen and (max-width: 768px) {
+  .cancelBtn, .nextBtn {
+    width: 130px;
+}}
 
 //----------//----------//----------//----------//----------
 
 // ----- Edit Angular styles -----
 //----------//----------//----------//----------//----------
 
-.cdk-overlay-container 
-{
+.cdk-overlay-container {
   z-index: 10000000000000000000000000000000000000000000000000000;
 }
 .cdk-overlay-dark-backdrop {
@@ -138,6 +164,17 @@ input[type='checkbox'] + label {
 .mat-dialog-container {
   border: 1px solid var(--black);
   border-radius: var(--radius-small) !important;
+  padding: 0 !important;
 }
-
+@media screen and (max-width: 475px) {
+  .mat-dialog-container {
+    border: none;
+    border-radius: 0 !important;
+  }
+  .cdk-overlay-pane {
+    position: absolute !important;
+    bottom: 0 !important;
+    max-height: calc(100vh - 90px);
+    max-width: 100vw !important;
+}}
 //----------//----------//----------//----------//----------

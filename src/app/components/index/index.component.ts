@@ -21,6 +21,7 @@ export class IndexComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
   video() {
     this.play = !this.play;
   }

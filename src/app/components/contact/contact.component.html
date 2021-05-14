@@ -1,7 +1,11 @@
 <section>
     <div class="flex">
         <div class="first">
-            <div class="photo"><img src="{{biography.photo}}" alt="profile"></div>
+            <div class="photo">
+                <div class="window">
+                    <img src="{{biography.photo}}" alt="profile">
+                </div>
+            </div>
             <div class="biography">
                 <h1>{{biography.title}}</h1>
                 <p>{{biography.description}}</p>
@@ -11,10 +15,9 @@
             <div class="buttons">
                 <div class="btn contactForm" (click)="openContactForm()" [ngClass]="{'notDisplay': this.loginService.isLogin}">Contactar con Pablo</div>
                 <div class="btn editBiography" (click)="openEditBiography()" [ngClass]="{'notDisplay': !this.loginService.isLogin}">Editar biografía</div>
-                <div class="btn newsletter" (click)="openNewsletter()" [ngClass]="{'notDisplay': this.loginService.isLogin}">Alerta de novedades</div>
+                <!-- <div class="btn newsletter" (click)="openNewsletter()" [ngClass]="{'notDisplay': this.loginService.isLogin}">Alerta de novedades</div> -->
                 <div class="btn editVideos" (click)="openEditVideos()" [ngClass]="{'notDisplay': !this.loginService.isLogin}">Editar vídeos</div>
                 <div class="btn editVideos" (click)="loginService.logOut()" [ngClass]="{'notDisplay': !this.loginService.isLogin}">Log Out</div>
-
             </div>
             <div class="videos">
                 <div class="v1">

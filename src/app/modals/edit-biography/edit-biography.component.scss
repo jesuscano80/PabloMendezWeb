@@ -4,6 +4,7 @@ form {
     width: 1190px;
     max-width: 100%;
     height: fit-content;
+    padding: 20px;
     & > .top {
         display: flex;
         & > .img {
@@ -29,13 +30,20 @@ form {
                     margin-right: 15px;
                     cursor: pointer;
                 }
-                & > img {
+                & > .window {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: var(--black);
                     border-radius: 50%;
-                    display: block;
                     height: 330px;
+                    width: 330px;
                     filter: grayscale(100%);
                     cursor: pointer;
-            }}
+                    overflow: hidden;
+                    & > img {
+                        height: 100%;
+            }}}
             & > input {
                 display: none;
         }}
@@ -59,16 +67,26 @@ form {
                     height: 32px;
                     &::placeholder {
                         color: var(--grey);
-            }}}
+                }}
+                & > p {
+                    margin-left: 5px;
+            }}
             & > .description {
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 20px;
                 width: 100%;
-                & > label {
-                    align-self: flex-start;
+                & > div {
+                    display: flex;
+                    align-items: flex-start;
+                    width: 100%;
                     margin-bottom: 10px;
-                }
+                    & > p {
+                        margin-left: 5px;
+                    }
+                    & > label {
+                        margin-bottom: 10px;
+                }}
                 & > textarea {
                     resize: none;
                     width: 100%;
@@ -77,15 +95,23 @@ form {
                     border: 1px solid var(--black);
                     font-size: var(--font-size-smaller);
                     border-radius: var(--radius-smaller);
+                }
+                & > p {
+                    margin-left: 5px;
     }}}}
     & > .buttons {
+        width: fit-content;
+        margin-left: auto;
         display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin-bottom: 0;
-        & > .cancelBtn {
-            margin-right: 20px;
-            text-align: center;    
-            padding: 5px;
-}}}
+        flex-direction: column;
+        & > p {
+            text-align: center;
+            margin: 0 0 10px 0;
+        }
+        & > .btn {
+            display: flex;
+            justify-content: flex-end;
+            & > .cancelBtn {
+                margin-right: 20px;
+}}}}
 //----------//----------//----------//----------//----------

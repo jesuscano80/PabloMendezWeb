@@ -4,5 +4,5 @@ export class Contact {
         public email: string,
         public message: string,
         public subscribe: boolean
-    ){}
+    ){ }
 }
