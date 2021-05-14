@@ -44,7 +44,7 @@
             <label for="checkbox">Subscríbete a mi Newsletter</label>
         </div>
         <div class="buttons">
-            <p class="notDisplay" [class]="{'textError': contactForm.submitted}">Comprueba los campos marcados por (*)</p>
+            <p class="notDisplay" [class]="{'textError': contactForm.submitted && (email.invalid || message.invalid || name.invalid)}">Comprueba los campos marcados por (*)</p>
             <div class="btn">
                 <p class="cancelBtn" mat-dialog-close>Cancelar</p>
                 <button class="nextBtn" #nextBtn>Enviar</button>

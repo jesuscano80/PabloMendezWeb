@@ -1,8 +1,10 @@
-<form #editbioForm="ngForm" (ngSubmit)="(editbioForm.invalid) ? 'mal' : onSubmit(editbioForm.value)">
+<form #editBioForm="ngForm" (ngSubmit)="(editBioForm.invalid) ? null : onSubmit(editBioForm.value)">
     <div class="top">
         <div class="img">
             <label for="img">
-                <img src="{{bio.photo}}" alt="new">
+                <div class="window">
+                    <img src="{{biography.photo}}" alt="new">
+                </div>
                 <p>
                     Cambiar foto
                 </p>
@@ -11,10 +13,10 @@
                 </ng-container>
             </label>
             <input type="file"
-             id="img"
+            id="img"
             name="image" 
             (change)="uploadPhoto($event)"
-             >
+            required>
         </div>
         <div class="right">
             <div class="txt">
@@ -22,26 +24,35 @@
                 <input type="text" 
                 id="txt" 
                 name="title" 
-                value="{{bio.title}}"
-                [(ngModel)]="bio.title"
+                value="{{biography.title}}"
+                [(ngModel)]="biography.title"
                 #title="ngModel"
-            >
+                [ngClass]="{'inputError':editBioForm.submitted && title.invalid}"
+                required>
+                <p class="notDisplay" [class]="{'textError': editBioForm.submitted && title.invalid}">*</p>
             </div>
             <div class="description">
-                <label for="description">Descripción:</label>
+                <div>
+                    <label for="description">Descripción:</label>
+                    <p class="notDisplay" [class]="{'textError': editBioForm.submitted && description.invalid}">*</p>
+                </div>
                 <textarea type="text"
                  id="description"
                  name="description" 
-                 value="{{bio.description}}"
-                 [(ngModel)]="bio.description"
+                 value="{{biography.description}}"
+                 [(ngModel)]="biography.description"
                  #description="ngModel"
-                 >
+                [ngClass]="{'inputError':editBioForm.submitted && description.invalid}"
+                required>
                 </textarea>
             </div>
         </div>
     </div>
     <div class="buttons">
-        <p class="cancelBtn" mat-dialog-close>Cancelar</p>
-        <button class="nextBtn" >Guardar</button>
+        <p class="notDisplay" [class]="{'textError': editBioForm.submitted && ( description.invalid || title.invalid)}">Comprueba los campos marcados por (*)</p>
+        <div class="btn">
+            <p class="cancelBtn" mat-dialog-close>Cancelar</p>
+            <button class="nextBtn" >Guardar</button>
+        </div>
     </div>
 </form>
