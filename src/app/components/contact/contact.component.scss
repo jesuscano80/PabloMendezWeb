@@ -38,7 +38,6 @@ section {
                     height: 330px;
                     width: 330px;
                     filter: grayscale(100%);
-                    cursor: pointer;
                     overflow: hidden;
                     & > img {
                         height: 100%;
@@ -46,6 +45,7 @@ section {
             & > .biography {
                 margin-left: 20px;
                 max-height: 325px;
+                cursor: default;
                 & > h1 {
                     font-weight: var(--font-width-semiBold);
                     font-size: var(--font-size-bigger);

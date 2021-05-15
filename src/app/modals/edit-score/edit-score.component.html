@@ -1,0 +1,21 @@
+<form class="card">
+    <div class="left">
+        <div class="img">
+            <img src="{{card.img}}" alt="score">
+        </div>
+    </div>
+    <form class="right">
+        <div class="title">{{card.title}}</div>
+        <div class="description">{{card.description}}</div>
+        <div class="propierties">
+            <div class="left">
+                <div class="pages"><img src="/assets/partiture.svg" alt="scores"><span>{{card.pagesNumber}}</span></div>
+                <div class="category"><img src="/assets/folderIcon.svg" alt="carpet">{{card.categories}}</div>
+            </div>
+            <div class="price">{{card.price}} €</div>
+        </div>
+    <div class="buttons">
+        <p class="cancelBtn" (click)="cancelBtn()">Cancelar</p>
+        <button class="nextBtn"(click)="saveCard()">Guardar</button>
+    </div>
+</form>

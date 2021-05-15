@@ -25,7 +25,6 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.refreshData();
-    this.openEditVideos();
   }
   // This method get the data of the backEnd
   public refreshData(): void {
@@ -48,7 +47,7 @@ export class ContactComponent implements OnInit {
   }
   public openEditBiography(): void {
     const dialogRef = this.matDialog.open(EditBiographyComponent, {panelClass: ['animate__animated', 'animate__backInDown']});
-    dialogRef.componentInstance.biography = this.biography;
+    dialogRef.componentInstance.biographyCopy = this.biography;
     dialogRef.afterClosed().subscribe(data => {this.biography = data});
   }
   public openEditVideos(): void {

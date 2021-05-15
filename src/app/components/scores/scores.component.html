@@ -5,11 +5,9 @@
             <input class="searchLine" placeholder="Buscar una obra">
             <select class="filter">
                 <option selected value="all">Todas</option>
-                <option value="{{categories[0]}}">{{categories[0]}}</option>
-                <option value="{{categories[1]}}">{{categories[1]}}</option>
-                <option value="{{categories[2]}}">{{categories[2]}}</option>
-                <option value="{{categories[3]}}">{{categories[3]}}</option>
-                <option value="{{categories[4]}}">{{categories[4]}}</option>
+                <ng-container *ngFor="let category of categories">
+                    <option value="{{category}}">{{category}}</option>
+                </ng-container>
             </select>
             <button class="button"><img src="/assets/searchIcon.svg" alt="search"></button>
         </form>
@@ -21,22 +19,22 @@
             <div class="card" (click)="selectCard(i)" [ngClass]="{'card2': i === selected - 1}"
                 [ngClass]="{'notDisplay': (selected !== 0) && (i !== selected - 1)}">
                 <div class="left">
-                    <img src="{{card.scoreImage}}" alt="score">
+                    <img src="{{card.img}}" alt="score">
                 </div>
                 <div class="right">
                     <div class="title">{{card.title}}</div>
                     <div class="description">{{card.description}}</div>
                     <div class="propierties">
                         <div class="left">
-                            <div class="pages"><img src="/assets/partiture.svg" alt="scores"><span>{{selected}}</span></div>
-                            <div class="category"><img src="/assets/folderIcon.svg" alt="carpet">{{card.category}}</div>
+                            <div class="pages"><img src="/assets/partiture.svg" alt="scores"><span>{{card.pagesNumber}}</span></div>
+                            <div class="category"><img src="/assets/folderIcon.svg" alt="carpet">{{card.categories}}</div>
                         </div>
                         <div class="price">{{card.price}} €</div>
                     </div>
                     <div class="buttons">
                         <button class="cancelBtn" (click)="backForward()">Atrás</button>
-                        <button class="nextBtn" [ngClass]="{'notDisplay': this.loginService.isLogin}">Comprar</button>
-                        <button class="nextBtn" [ngClass]="{'notDisplay': !this.loginService.isLogin}">Editar</button>
+                        <button class="nextBtn" [ngClass]="{'notDisplay': this.loginService.isLogin}" (click)="addToCart(card)">Comprar</button>
+                        <button class="nextBtn" [ngClass]="{'notDisplay': !this.loginService.isLogin}" (click)="toEdit(card, i)">Editar</button>
                     </div>
                 </div>
             </div>

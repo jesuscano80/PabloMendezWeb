@@ -2,9 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Biography } from '../models/biography';
 import { Global } from '../models/global';
-
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class BiographyService {
   public global: Global = new Global();

@@ -33,6 +33,7 @@ import { EditBiographyComponent } from './modals/edit-biography/edit-biography.c
 import { AuthGuard } from "./guards/auth.guard";
 //----------//----------//----------//----------//----------//----------
 import { TokenInterceptorService } from "./shared/token-interceptor.service";
+import { EditScoreComponent } from './modals/edit-score/edit-score.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { TokenInterceptorService } from "./shared/token-interceptor.service";
     CartComponent,
     NewScoreComponent,
     EditVideosComponent,
-    EditBiographyComponent
+    EditBiographyComponent,
+    EditScoreComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,6 @@ import { SimpleNotificationComponent } from '../simple-notification/simple-notif
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Biography } from 'src/app/models/biography';
 import { BiographyService } from 'src/app/shared/biography.service';
-import { Global } from '../../models/global';
 @Component({
   selector: 'app-edit-biography',
   templateUrl: './edit-biography.component.html',
@@ -12,17 +11,24 @@ import { Global } from '../../models/global';
 export class EditBiographyComponent implements OnInit {
 
   public biography: Biography = new Biography("", "", "");
+  public biographyCopy: Biography = new Biography("", "", "");
   public error: string= '';
 
   constructor(
     private dialogRef: MatDialogRef<EditBiographyComponent>,
     private matDialog: MatDialog,
-    private biographyService: BiographyService,
-    private global: Global = new Global
+    private biographyService: BiographyService
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.biography.title = this.biographyCopy.title;
+    this.biography.description = this.biographyCopy.description;
+    this.biography.photo = this.biographyCopy.photo;
+  }
 
+  public close(): void {
+    this.dialogRef.close(this.biographyCopy);
+  }
   public saveEdit(string: string): void {
     this.dialogRef.close(this.biography); // This line close the actual modal for not overlap with SimpleNotification modal
     const dialogRef = this.matDialog.open(SimpleNotificationComponent, {panelClass: ['animate__animated', 'animate__backInDown']});
@@ -46,7 +52,7 @@ export class EditBiographyComponent implements OnInit {
     this.error = '';
     const imageToUpload = image.target.files.item(0);
     this.biographyService.putBiography(imageToUpload).subscribe((data: any) => {
-        this.biography.photo = `${this.global.url}uploads/${data.filename}`;
+        this.biography.photo = `localhost:3000/uploads/${data.filename}`;
       }, (err) => {
         this.error = err.error.message;
 });}}

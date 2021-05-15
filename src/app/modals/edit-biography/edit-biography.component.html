@@ -51,7 +51,7 @@
     <div class="buttons">
         <p class="notDisplay" [class]="{'textError': editBioForm.submitted && ( description.invalid || title.invalid)}">Comprueba los campos marcados por (*)</p>
         <div class="btn">
-            <p class="cancelBtn" mat-dialog-close>Cancelar</p>
+            <p class="cancelBtn" (click)="close()">Cancelar</p>
             <button class="nextBtn" >Guardar</button>
         </div>
     </div>
