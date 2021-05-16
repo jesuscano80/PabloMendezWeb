@@ -142,8 +142,6 @@ export class ScoresComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const dialogRef = this.matDialog.open(EditScoreComponent, { panelClass: ['animate__animated', 'animate__backInDown'] });
-    dialogRef.componentInstance.cardCopy = this.cards[1];
   }
 
   // This method save all cards to buy in a propierty of cardsService and update coutItems variable
@@ -169,8 +167,10 @@ export class ScoresComponent implements OnInit {
         const dialogRef = this.matDialog.open(EditScoreComponent, { panelClass: ['animate__animated', 'animate__backInDown'] });
         dialogRef.componentInstance.cardCopy = card;
         dialogRef.afterClosed().subscribe(data => {
-          if (data && data.isChange) {this.cards[index];}
-  });}});}
+          if (data && data.isChange) {
+            this.cards[index] = data.card;
+            this.hideSelectedCard();
+      }});}});}
 
   // -----Design functions-----
   // ----------//----------//----------//----------//----------

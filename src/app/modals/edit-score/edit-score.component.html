@@ -1,21 +1,78 @@
-<form class="card">
+<form #editScoreForm="ngForm" (ngSubmit)="(editScoreForm.invalid) ? null : onSubmit()">
     <div class="left">
-        <div class="img">
+        <div for="img">
             <img src="{{card.img}}" alt="score">
         </div>
     </div>
-    <form class="right">
-        <div class="title">{{card.title}}</div>
-        <div class="description">{{card.description}}</div>
-        <div class="propierties">
-            <div class="left">
-                <div class="pages"><img src="/assets/partiture.svg" alt="scores"><span>{{card.pagesNumber}}</span></div>
-                <div class="category"><img src="/assets/folderIcon.svg" alt="carpet">{{card.categories}}</div>
-            </div>
-            <div class="price">{{card.price}} €</div>
+    <div class="right">
+        <div class="title">
+            <label for="title">
+                Título:
+            </label>
+            <input 
+                type="text"
+                id="title" 
+                name="title"
+                [(ngModel)]="card.title"
+                #title="ngModel"
+                value="{{card.title}}"
+                required>
         </div>
-    <div class="buttons">
-        <p class="cancelBtn" (click)="cancelBtn()">Cancelar</p>
-        <button class="nextBtn"(click)="saveCard()">Guardar</button>
+        <div class="propierties">
+            <div class="category">
+                <label for="categories">Categorías:</label>
+                <input
+                    type="text"
+                    id="categories"
+                    name="categories"
+                    [(ngModel)]="card.categories"
+                    #categories="ngModel"
+                    value="{{card.categories}}"
+                    required>
+            </div>
+            <div class="price">
+                <label for="price">Precio:</label>
+                <input
+                    type="text"
+                    id="price"
+                    name="price"
+                    [(ngModel)]="card.price"
+                    #price="ngModel"
+                    value="{{card.price}}"
+                    required>
+                    <p>€</p>
+            </div>
+            <div class="pdf">
+                <label for="pdf">Pdf</label>
+                <input
+                    type="file"
+                    id="pdf">
+                <!-- <input
+                    type="file"
+                    id="pdf"
+                    name="pdf"
+                    [(ngModel)]="card.pdf"
+                    #pdf="ngModel"
+                    reqired> -->
+            </div>
+        </div>
+        <div class="description">
+            <label for="description">
+                Descripción:
+            </label>
+            <textarea
+                type="text"
+                id="description"
+                name="description"
+                [(ngModel)]="card.description"
+                #description="ngModel"
+                value="{{card.description}}"
+                required>
+            </textarea>
+        </div>
+        <div class="buttons">
+            <p class="cancelBtn" (click)="cancelBtn()">Cancelar</p>
+            <button class="nextBtn">Guardar</button>
+        </div>
     </div>
 </form>

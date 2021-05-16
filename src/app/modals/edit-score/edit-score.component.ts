@@ -27,10 +27,17 @@ export class EditScoreComponent implements OnInit {
     this.card.id = this.cardCopy.id;
     this.card.title = this.cardCopy.title;
     this.card.description = this.cardCopy.description;
+    this.card.categories = this.cardCopy.categories;
     this.card.price = this.cardCopy.price;
     this.card.img = this.cardCopy.img;
     this.card.pdf = this.cardCopy.pdf;
     this.card.pagesNumber = this.cardCopy.pagesNumber;
+    console.log(this.card);
+    
+  }
+  onSubmit() {
+    console.log(this.card);
+    this.saveCard();
   }
   public cancelBtn(): void {
     let data: any = {
