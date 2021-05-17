@@ -25,7 +25,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.refreshData();
-    this.openEditVideos();
+    this.openEditBiography();
   }
   // This method get the data of the backEnd
   public refreshData(): void {
