@@ -10,6 +10,12 @@ import { SimpleNotificationComponent } from '../simple-notification/simple-notif
 })
 export class EditScoreComponent implements OnInit {
 
+  // This variable controls the message for the client when finish to edit or create the score
+  public isNew: boolean = true;
+  
+  // This variable controls all possible values for datalist
+  public categoriesDatalist: string[] = []
+
   public card: Card = new Card();
   public cardCopy: Card = new Card();
 
@@ -32,11 +38,14 @@ export class EditScoreComponent implements OnInit {
     this.card.img = this.cardCopy.img;
     this.card.pdf = this.cardCopy.pdf;
     this.card.pagesNumber = this.cardCopy.pagesNumber;
-    console.log(this.card);
-    
   }
+  
   onSubmit() {
-    console.log(this.card);
+    this.card.categories = this.card.categories.toString().toLowerCase().split(',');
+    for (let i = 0; i < this.card.categories.length; i++) {
+      this.card.categories[i] = this.card.categories[i].trim();
+    }
+    this.card.price = this.card.price.replace(new RegExp(/[.]/g), ",")
     this.saveCard();
   }
   public cancelBtn(): void {
@@ -52,6 +61,8 @@ export class EditScoreComponent implements OnInit {
     }
     this.dialogRef.close(data)
     const dialogRef = this.matDialog.open(SimpleNotificationComponent, {panelClass: ['animate__animated', 'animate__backInDown']});
-    dialogRef.componentInstance.message = "Se han actualizado los datos de la partitura";
-  }
-}
+    if (!this.isNew) {
+      dialogRef.componentInstance.message = "Se han actualizado los datos de la partitura";
+    } else if (this.isNew) {
+      dialogRef.componentInstance.message = "Se ha creado la partitura correctamente";
+}}}

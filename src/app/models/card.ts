@@ -3,7 +3,7 @@ export class Card {
         public id: string = "",
         public title: string = "",
         public price: string = "",
-        public categories: string[] = [],
+        public categories: any = [],
         public description: string = "",
         // This variable need type and then delete this comment
         public pdf: any = "",

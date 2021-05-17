@@ -1,0 +1,51 @@
+//-----Global desing component-----
+//----------//----------//----------//----------//----------
+article {
+    display: flex;
+    flex-direction: column;
+    min-width: 1340px;
+    max-width: calc(100% - 40px);
+    height: 560px;
+    background-color: aquamarine;
+    border: 1px solid var(--black);
+    border-radius: var(--radius-small);
+    padding: 20px;
+    & > .header {
+        & > h2 {
+    }}
+    & > .elements {
+        & > .element {
+            & .title {
+            }
+            & > .price {
+            }
+            & > .controls {
+                & > .plus {
+
+                }
+                & > .count {
+
+                }
+                & > .less {
+
+    }}}}
+    & > .footer {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        & > .checkbox {
+            display: flex;
+            align-items: flex-start;
+            & > input {
+            }
+            & > label {
+                font-size: var(--font-size-smaller);
+        }}
+        & > .buttons {
+            display: flex;
+            justify-content: flex-end;
+            & > .cancelBtn {
+                margin-right: 20px;
+}}}}
+//----------//----------//----------//----------//----------

@@ -28,7 +28,11 @@
                     [(ngModel)]="card.categories"
                     #categories="ngModel"
                     value="{{card.categories}}"
+                    list="options"
                     required>
+                    <datalist id="options">
+                        <option *ngFor="let category of categoriesDatalist" [value]="category"></option>
+                    </datalist>
             </div>
             <div class="price">
                 <label for="price">Precio:</label>

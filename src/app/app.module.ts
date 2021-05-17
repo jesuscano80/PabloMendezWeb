@@ -16,7 +16,6 @@ import { ExperienciesComponent } from './components/experiencies/experiencies.co
 import { ScoresComponent } from './components/scores/scores.component';
 import { LoginComponent } from './components/login/login.component';
 import { CartComponent } from './components/cart/cart.component';
-import { NewScoreComponent } from './components/new-score/new-score.component';
 //----------//----------//----------//----------//----------//----------
 
 //----- imports of modals ------
@@ -27,13 +26,13 @@ import { ContactFormComponent } from './modals/contact-form/contact-form.compone
 import { NewsLetterComponent } from './modals/news-letter/news-letter.component';
 import { EditVideosComponent } from './modals/edit-videos/edit-videos.component';
 import { EditBiographyComponent } from './modals/edit-biography/edit-biography.component';
+import { EditScoreComponent } from './modals/edit-score/edit-score.component';
 //----------//----------//----------//----------//----------//----------
 
 //----- imports of guards ------
 import { AuthGuard } from "./guards/auth.guard";
 //----------//----------//----------//----------//----------//----------
 import { TokenInterceptorService } from "./shared/token-interceptor.service";
-import { EditScoreComponent } from './modals/edit-score/edit-score.component';
 
 
 @NgModule({
@@ -50,7 +49,6 @@ import { EditScoreComponent } from './modals/edit-score/edit-score.component';
     ContactFormComponent,
     NewsLetterComponent,
     CartComponent,
-    NewScoreComponent,
     EditVideosComponent,
     EditBiographyComponent,
     EditScoreComponent

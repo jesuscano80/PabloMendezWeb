@@ -1,1 +1,28 @@
-<p>cart works!</p>
+<article>
+    <div class="header">
+        <h2>Total: {{totalPrice}} €</h2>
+    </div>
+    <div class="elements">
+        <ng-container *ngFor="let card of cards">
+            <div class="element">
+                <p class="title">{{card.title}}</p>
+                <p class="price">{{card.price}} €</p>
+                <div class="controls">
+                    <button class="plus"></button>
+                    <p class="count"></p>
+                    <button class="less"></button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="footer">
+        <div class="checkbox">
+            <input type="checkbox" id="checkbox" name="subscribe">
+            <label for="checkbox">He leído y acepto las condiciones de compra</label>
+        </div>
+        <div class="buttons">
+            <p class="cancelBtn" mat-dialog-close>Cancelar</p>
+            <button class="nextBtn" #nextBtn>Enviar</button>
+        </div>
+    </div>
+</article>
