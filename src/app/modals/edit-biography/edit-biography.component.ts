@@ -52,7 +52,7 @@ export class EditBiographyComponent implements OnInit {
     this.error = '';
     const imageToUpload = image.target.files.item(0);
     this.biographyService.putBiography(imageToUpload).subscribe((data: any) => {
-        this.biography.photo = `localhost:3000/uploads/${data.filename}`;
+        this.biography.photo = `http://localhost:3000/uploads/${data.filename}`;
       }, (err) => {
         this.error = err.error.message;
 });}}
